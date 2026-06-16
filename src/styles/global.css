@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: #11100d;
+    color: #f4efe6;
+    font-family: Inter, Arial, sans-serif;
+    text-rendering: geometricPrecision;
+  }
+
+  ::selection {
+    background: #c99b62;
+    color: #11100d;
+  }
+}
+
+@layer components {
+  .editorial-title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    line-height: 0.9;
+  }
+
+  .btn-premium {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 1.55rem;
+    border: 1px solid rgba(244, 239, 230, 0.26);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    transition:
+      background-color 240ms ease,
+      border-color 240ms ease,
+      color 240ms ease,
+      transform 240ms ease;
+  }
+
+  .btn-premium:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    border-color: #c99b62;
+    background: #c99b62;
+    color: #11100d;
+  }
+
+  .btn-secondary {
+    color: #f4efe6;
+  }
+
+  .btn-secondary:hover {
+    border-color: #c99b62;
+    color: #c99b62;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 700ms ease,
+      transform 700ms ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}
