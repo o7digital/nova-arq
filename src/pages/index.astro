@@ -1,309 +1,189 @@
 ---
-import "../styles/global.css";
-
-const projects = [
-  {
-    name: "Casa Bosques",
-    category: "Remodelación residencial",
-    location: "Bosques de las Lomas, CDMX",
-    image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=88",
-    size: "lg:col-span-7 lg:row-span-2",
-  },
-  {
-    name: "Residencia Norte",
-    category: "Casa nueva",
-    location: "Interlomas, Estado de México",
-    image:
-      "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?auto=format&fit=crop&w=1200&q=88",
-    size: "lg:col-span-5",
-  },
-  {
-    name: "Casa Lomas",
-    category: "Interiorismo",
-    location: "Lomas de Chapultepec, CDMX",
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=88",
-    size: "lg:col-span-5",
-  },
-  {
-    name: "Proyecto Valle",
-    category: "Ampliación",
-    location: "Valle de Bravo",
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=88",
-    size: "lg:col-span-12",
-  },
-];
+import Layout from '../layouts/Layout.astro';
+import ProjectGallery from '../components/ProjectGallery';
 
 const services = [
   {
-    number: "01",
-    title: "Remodelación Integral",
-    items: ["Cocinas", "Baños", "Fachadas", "Espacios sociales"],
+    number: '01',
+    title: 'Arquitectura residencial',
+    text: 'Obra nueva, ampliaciones y espacios concebidos desde la forma de vivir de cada cliente.',
   },
   {
-    number: "02",
-    title: "Planos Arquitectónicos",
-    items: ["Planos ejecutivos", "Permisos", "Documentación técnica"],
+    number: '02',
+    title: 'Interiorismo & decoración',
+    text: 'Concepto, materiales, color, iluminación y piezas que convierten una casa en un lugar propio.',
   },
   {
-    number: "03",
-    title: "Diseño Residencial",
-    items: ["Casas nuevas", "Ampliaciones", "Diseño personalizado"],
+    number: '03',
+    title: 'Remodelación integral',
+    text: 'Una visión completa para rediseñar, coordinar y ejecutar cada transformación con precisión.',
+  },
+  {
+    number: '04',
+    title: 'Dirección & detalle',
+    text: 'Supervisión de obra, presupuesto, proveedores, mobiliario a medida y control de calidad.',
   },
 ];
 
-const steps = ["Diagnóstico", "Concepto", "Planos", "Construcción", "Entrega"];
-
-const seoDescription =
-  "Despacho de arquitectura residencial en Ciudad de México especializado en remodelación de casas, planos arquitectónicos, interiorismo y diseño de casas modernas.";
+const steps = [
+  { number: 'I', title: 'Escuchar', text: 'Entender la vida, las necesidades y la ambición detrás de cada espacio.' },
+  { number: 'II', title: 'Imaginar', text: 'Traducir esa historia en concepto, atmósfera, función, materia y luz.' },
+  { number: 'III', title: 'Precisar', text: 'Resolver planos, costos, proveedores, tiempos y cada decisión técnica.' },
+  { number: 'IV', title: 'Materializar', text: 'Dirigir la ejecución y cuidar el proyecto hasta el último detalle.' },
+];
 ---
 
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOVA ARQ | Arquitecto residencial en Ciudad de México</title>
-    <meta name="description" content={seoDescription} />
-    <meta
-      name="keywords"
-      content="Arquitecto en Ciudad de México, Arquitecto residencial, Remodelación de casas, Diseño de casas modernas, Planos arquitectónicos, Despacho de arquitectura, Arquitectura residencial CDMX, Remodelación residencial, Diseño arquitectónico, Arquitecto para casas"
-    />
-    <meta property="og:title" content="NOVA ARQ | Arquitectura residencial premium" />
-    <meta property="og:description" content={seoDescription} />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=88" />
-    <link rel="preconnect" href="https://images.unsplash.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="fixed left-0 top-0 z-50 w-full bg-gradient-to-b from-ink/95 via-ink/55 to-transparent px-5 py-5 md:px-[7vw] md:py-7">
-      <div class="mx-auto flex max-w-[1680px] items-center justify-between">
-        <a href="#" class="font-serif text-xl tracking-[0.18em] text-ivory md:text-2xl">NOVA · ARQ</a>
-        <nav class="hidden items-center gap-8 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-muted md:flex">
-          <a class="transition hover:text-accent" href="#servicios">Servicios</a>
-          <a class="transition hover:text-accent" href="#proyectos">Proyectos</a>
-          <a class="transition hover:text-accent" href="#proceso">Proceso</a>
-          <a class="transition hover:text-accent" href="#contacto">Contacto</a>
-        </nav>
+<Layout
+  title="Raquel Hedo | Arquitectura & Interiorismo"
+  description="Raquel Hedo crea proyectos de arquitectura residencial, interiorismo, decoración y remodelación integral con una visión personal, técnica y atemporal."
+>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Raquel Hedo, inicio">
+      <span class="brand-mark">RH</span>
+      <span class="brand-copy"><strong>RAQUEL HEDO</strong><small>ARCHITECTURE & INTERIORS</small></span>
+    </a>
+    <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" data-menu-button>
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" aria-label="Navegación principal" data-menu>
+      <a href="#estudio">Estudio</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#servicios">Servicios</a>
+      <a class="nav-contact" href="#contacto">Hablemos <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow hero-eyebrow"><span></span> Arquitectura · Interiorismo · Decoración</p>
+        <h1>Espacios que<br />cuentan <em>quién eres.</em></h1>
+        <p class="hero-intro">Arquitectura e interiores pensados como una sola experiencia: personal, precisa y profundamente humana.</p>
+        <div class="hero-actions">
+          <a class="button button--light" href="#proyectos">Descubrir el trabajo <span>→</span></a>
+          <a class="text-link text-link--light" href="#estudio">Conocer a Raquel <span>↗</span></a>
+        </div>
       </div>
-    </header>
+      <div class="hero-signature">
+        <span>Desde 2001</span>
+        <span>Architecture & Interiors</span>
+      </div>
+      <a class="scroll-cue" href="#estudio" aria-label="Ir a la siguiente sección"><span>Scroll</span><b>↓</b></a>
+    </section>
 
-    <main>
-      <section class="relative grid min-h-screen overflow-hidden px-5 pb-16 pt-28 md:px-[7vw] md:pt-32 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-16">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_28%,rgba(201,155,98,0.16),transparent_28%),linear-gradient(115deg,rgba(17,16,13,0.98)_0%,rgba(17,16,13,0.78)_48%,rgba(17,16,13,0.3)_100%)]"></div>
-        <div class="reveal relative z-10 max-w-4xl">
-          <p class="mb-7 text-[0.72rem] font-bold uppercase tracking-[0.22em] text-accent">
-            Arquitectura residencial · Remodelación · Planos
-          </p>
-          <h1 class="editorial-title max-w-[46rem] text-[4.1rem] tracking-normal text-ivory md:text-[5.4rem] lg:text-[4.8rem] xl:text-[5.25rem] 2xl:text-[6.6rem]">
-            Casas diseñadas para vivir mejor.
-          </h1>
-          <p class="mt-8 max-w-2xl text-lg leading-8 text-muted md:text-xl md:leading-9">
-            Transformamos propiedades en espacios elegantes, funcionales y atemporales mediante arquitectura,
-            remodelación y diseño residencial.
-          </p>
-          <div class="mt-10 flex flex-wrap gap-4">
-            <a class="btn-premium btn-primary" href="#contacto">Agendar Consulta</a>
-            <a class="btn-premium btn-secondary" href="#proyectos">Ver Proyectos</a>
-          </div>
+    <section class="manifesto section-pad" id="estudio">
+      <div class="manifesto-index" aria-hidden="true">01 / 05</div>
+      <div class="manifesto-copy" data-reveal>
+        <p class="eyebrow"><span></span> Una visión integral</p>
+        <h2>La arquitectura no termina en los muros.</h2>
+        <div class="manifesto-columns">
+          <p class="lead">Empieza en cómo entra la luz, cómo fluye una conversación y cómo cada objeto encuentra su lugar.</p>
+          <p>Raquel Hedo concibe arquitectura, interiorismo y decoración como una sola disciplina. Desde la primera idea hasta la entrega, combina sensibilidad estética, dominio técnico y dirección de obra para crear espacios irrepetibles.</p>
         </div>
+      </div>
+    </section>
 
-        <div class="relative z-10 mt-12 lg:mt-0">
-          <div class="group relative h-[64vh] min-h-[440px] overflow-hidden lg:h-[78vh]" data-parallax>
-            <img
-              class="h-[112%] w-full object-cover object-center transition duration-[1400ms] ease-out group-hover:scale-[1.04]"
-              src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1500&q=88"
-              alt="Casa contemporánea con arquitectura residencial premium"
-              loading="eager"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/12 to-transparent"></div>
-            <div class="absolute bottom-6 left-6 max-w-[18rem] border border-ivory/15 bg-ivory px-7 py-7 text-ink md:bottom-10">
-              <strong class="block font-serif text-5xl font-normal leading-none md:text-6xl">150+</strong>
-              <span class="mt-4 block text-sm leading-6 text-[#675843]">
-                proyectos residenciales con precisión técnica, diseño contemporáneo y visión de inversión.
-              </span>
-            </div>
-          </div>
+    <section class="portfolio section-pad" id="proyectos">
+      <div class="section-heading" data-reveal>
+        <div>
+          <p class="eyebrow"><span></span> Selección de atmósferas</p>
+          <h2>Obra & espacios</h2>
         </div>
-      </section>
+        <p>Una muestra editorial del lenguaje visual. Las imágenes serán sustituidas por el portafolio real de Raquel.</p>
+      </div>
+      <ProjectGallery client:load />
+    </section>
 
-      <section class="px-5 py-24 md:px-[7vw] md:py-32">
-        <div class="reveal mx-auto grid max-w-[1500px] gap-12 border-t border-ivory/15 pt-16 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24">
-          <p class="text-[0.72rem] font-bold uppercase tracking-[0.22em] text-accent">Filosofía</p>
-          <div>
-            <h2 class="max-w-4xl font-serif text-5xl font-normal leading-[1.02] text-ivory md:text-7xl">
-              Arquitectura que aumenta el valor de tu propiedad.
-            </h2>
-            <p class="mt-8 max-w-3xl text-lg leading-9 text-muted">
-              Diseñamos con una lectura clara del estilo de vida, la inversión y la ejecución. Cada decisión busca
-              elevar la funcionalidad, mejorar la calidad de vida y construir una propiedad más sólida, deseable y
-              atemporal.
-            </p>
-          </div>
+    <section class="quote-section">
+      <div class="quote-image" aria-hidden="true"></div>
+      <div class="quote-overlay" aria-hidden="true"></div>
+      <div class="quote-content" data-reveal>
+        <p>Arquitectura e interiorismo concebidos como una experiencia integral.</p>
+        <span>Del espacio a la luz · Del mobiliario al detalle</span>
+      </div>
+    </section>
+
+    <section class="services section-pad" id="servicios">
+      <div class="section-heading section-heading--dark" data-reveal>
+        <div>
+          <p class="eyebrow"><span></span> El estudio</p>
+          <h2>Una visión.<br /><em>Cuatro disciplinas.</em></h2>
         </div>
-      </section>
+        <p>Un solo punto de contacto para imaginar, definir y materializar un proyecto completo.</p>
+      </div>
+      <div class="service-list">
+        {services.map((service) => (
+          <article class="service-row" data-reveal>
+            <span>{service.number}</span>
+            <h3>{service.title}</h3>
+            <p>{service.text}</p>
+            <b aria-hidden="true">↗</b>
+          </article>
+        ))}
+      </div>
+    </section>
 
-      <section id="servicios" class="px-5 pb-24 md:px-[7vw] md:pb-32">
-        <div class="mx-auto max-w-[1500px]">
-          <div class="reveal grid border border-ivory/15 lg:grid-cols-3">
-            {services.map((service) => (
-              <article class="group min-h-[22rem] border-b border-ivory/15 p-8 transition duration-300 hover:bg-ivory hover:text-ink lg:border-b-0 lg:border-r lg:border-ivory/15 lg:p-11">
-                <span class="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-accent">{service.number}</span>
-                <h3 class="mt-8 font-serif text-4xl font-normal leading-tight">{service.title}</h3>
-                <ul class="mt-8 space-y-3 text-muted group-hover:text-[#5E5140]">
-                  {service.items.map((item) => <li>{item}</li>)}
-                </ul>
-              </article>
-            ))}
-          </div>
+    <section class="process section-pad">
+      <div class="process-top" data-reveal>
+        <p class="eyebrow"><span></span> El proceso</p>
+        <h2>Del primer trazo<br />al último detalle.</h2>
+        <p>Una metodología rigurosa, cercana y transparente para que el proceso se disfrute tanto como el resultado.</p>
+      </div>
+      <div class="process-grid">
+        {steps.map((step) => (
+          <article data-reveal>
+            <span>{step.number}</span>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="profile section-pad">
+      <div class="profile-visual" data-reveal>
+        <div class="portrait-frame">
+          <img src="/assets/portrait/raquel-hedo-reference.png" alt="Retrato provisional de Raquel Hedo" loading="lazy" />
         </div>
-      </section>
-
-      <section id="proyectos" class="bg-paper px-5 py-24 text-ink md:px-[7vw] md:py-32">
-        <div class="mx-auto max-w-[1500px]">
-          <div class="reveal mb-14 flex flex-col justify-between gap-8 md:flex-row md:items-end">
-            <h2 class="max-w-3xl font-serif text-6xl font-normal leading-none md:text-8xl">Portfolio Premium</h2>
-            <p class="max-w-md text-base leading-8 text-[#5f5446]">
-              Remodelación residencial, casas nuevas, ampliaciones e interiorismo con lenguaje arquitectónico propio.
-            </p>
-          </div>
-
-          <div class="grid auto-rows-[20rem] grid-cols-1 gap-5 lg:grid-cols-12 lg:auto-rows-[18rem]">
-            {projects.map((project) => (
-              <article class={`reveal group relative overflow-hidden ${project.size}`}>
-                <img
-                  class="h-full w-full object-cover transition duration-[900ms] ease-out group-hover:scale-[1.055]"
-                  src={project.image}
-                  alt={`${project.name}, ${project.category} en ${project.location}`}
-                  loading="lazy"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-ivory md:p-9">
-                  <p class="text-[0.7rem] font-bold uppercase tracking-[0.16em] text-accent">{project.category}</p>
-                  <h3 class="mt-2 font-serif text-4xl font-normal">{project.name}</h3>
-                  <p class="mt-2 text-sm text-muted">{project.location}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+        <div class="profile-years"><strong>≈25</strong><span>años creando<br />espacios con identidad</span></div>
+      </div>
+      <div class="profile-copy" data-reveal>
+        <p class="eyebrow"><span></span> Raquel Hedo</p>
+        <h2>Una mirada formada entre arquitectura, arte y mundo.</h2>
+        <p class="profile-lead">Arquitecta y decoradora independiente desde 2001, especializada en arquitectura residencial, construcción nueva y remodelación.</p>
+        <p>Formada en Arquitectura en la Universidad Anáhuac, amplió sus estudios en Boston, Harvard, Pittsburgh, Florencia y Suiza, y cursó un MBA. Su práctica integra diseño, presupuestos, proveedores, contratistas, mobiliario a medida e iluminación.</p>
+        <div class="credentials">
+          <div><strong>4</strong><span>Idiomas<br />ES · EN · FR · IT</span></div>
+          <div><strong>360°</strong><span>Diseño, presupuesto<br />y ejecución</span></div>
+          <div><strong>2001</strong><span>Práctica independiente<br />en México</span></div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="proceso" class="px-5 py-24 md:px-[7vw] md:py-32">
-        <div class="reveal mx-auto grid max-w-[1500px] gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
-          <div>
-            <p class="text-[0.72rem] font-bold uppercase tracking-[0.22em] text-accent">Proceso</p>
-            <h2 class="mt-7 max-w-xl font-serif text-5xl font-normal leading-[1.02] md:text-7xl">
-              De la primera idea al proyecto listo para habitar.
-            </h2>
-          </div>
-          <div class="border-t border-ivory/15">
-            {steps.map((step, index) => (
-              <div class="grid grid-cols-[4.5rem_1fr] gap-5 border-b border-ivory/15 py-7 md:grid-cols-[7rem_1fr]">
-                <span class="text-sm font-bold tracking-[0.18em] text-accent">{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3 class="text-2xl font-medium text-ivory">{step}</h3>
-                  <p class="mt-3 max-w-2xl leading-7 text-muted">
-                    {index === 0 && "Medimos, escuchamos objetivos y definimos alcance, presupuesto y prioridades."}
-                    {index === 1 && "Construimos una visión estética y funcional con materiales, distribución y atmósfera."}
-                    {index === 2 && "Desarrollamos planos ejecutivos, permisos y documentación técnica para construir."}
-                    {index === 3 && "Coordinamos decisiones clave y supervisamos que la obra respete el diseño."}
-                    {index === 4 && "Cerramos detalles, verificamos calidad y entregamos un espacio listo para disfrutarse."}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <section class="worldline">
+      <p>UNIVERSIDAD ANÁHUAC</p><span>·</span><p>BOSTON</p><span>·</span><p>HARVARD</p><span>·</span><p>PITTSBURGH</p><span>·</span><p>FLORENCIA</p><span>·</span><p>SUIZA</p>
+    </section>
 
-      <section class="bg-[#171510] px-5 py-24 md:px-[7vw]">
-        <div class="reveal mx-auto grid max-w-[1500px] gap-8 lg:grid-cols-2">
-          <figure class="border-l border-accent pl-8">
-            <div class="text-accent">★★★★★</div>
-            <blockquote class="mt-6 max-w-2xl font-serif text-4xl leading-tight text-ivory">
-              “Transformaron completamente nuestra casa y aumentaron su valor.”
-            </blockquote>
-            <figcaption class="mt-7 text-sm uppercase tracking-[0.16em] text-muted">
-              Cliente Residencial · Ciudad de México
-            </figcaption>
-          </figure>
-          <figure class="border-l border-ivory/15 pl-8">
-            <div class="text-accent">★★★★★</div>
-            <blockquote class="mt-6 max-w-2xl font-serif text-4xl leading-tight text-ivory">
-              “El proceso fue claro, elegante y técnicamente impecable de inicio a entrega.”
-            </blockquote>
-            <figcaption class="mt-7 text-sm uppercase tracking-[0.16em] text-muted">
-              Propietario · Lomas de Chapultepec
-            </figcaption>
-          </figure>
-        </div>
-      </section>
+    <section class="contact section-pad" id="contacto">
+      <div class="contact-copy" data-reveal>
+        <p class="eyebrow"><span></span> Conversemos</p>
+        <h2>Tu próximo espacio empieza con una conversación.</h2>
+        <p>Cuando estén disponibles los datos de contacto definitivos, este espacio permitirá iniciar una conversación sobre el proyecto.</p>
+        <span class="button button--dark button--static">Iniciar un proyecto <span>↗</span></span>
+      </div>
+      <div class="contact-monogram" aria-hidden="true">RH</div>
+    </section>
+  </main>
 
-      <section id="contacto" class="relative overflow-hidden px-5 py-28 text-center md:px-[7vw] md:py-40">
-        <img
-          class="absolute inset-0 h-full w-full object-cover"
-          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=88"
-          alt="Interior residencial premium para llamada a la acción"
-          loading="lazy"
-        />
-        <div class="absolute inset-0 bg-ink/78"></div>
-        <div class="reveal relative z-10 mx-auto max-w-4xl">
-          <h2 class="font-serif text-6xl font-normal leading-none text-ivory md:text-8xl">Hablemos de tu próximo proyecto.</h2>
-          <p class="mx-auto mt-7 max-w-2xl text-lg leading-8 text-muted">
-            Agenda una consulta inicial y descubre cómo transformar tu propiedad con una propuesta arquitectónica premium.
-          </p>
-          <div class="mt-10 flex flex-wrap justify-center gap-4">
-            <a class="btn-premium btn-primary" href="mailto:hola@novaarq.mx?subject=Solicitud%20de%20cotización">Solicitar Cotización</a>
-            <a class="btn-premium btn-secondary" href="https://wa.me/525500000000">WhatsApp</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="flex flex-col gap-3 px-5 py-8 text-sm text-[#8f8374] md:flex-row md:justify-between md:px-[7vw]">
-      <span>© 2026 NOVA · ARQ</span>
-      <span>Arquitectura residencial CDMX · Remodelación · Planos arquitectónicos</span>
-    </footer>
-
-    <script>
-      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      if (!prefersReducedMotion) {
-        const revealObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                revealObserver.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.12 },
-        );
-
-        document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
-
-        const parallax = document.querySelector("[data-parallax] img");
-        const updateParallax = () => {
-          if (!(parallax instanceof HTMLElement)) return;
-          const offset = window.scrollY * 0.08;
-          parallax.style.transform = `translate3d(0, ${offset}px, 0) scale(1.02)`;
-        };
-
-        updateParallax();
-        window.addEventListener("scroll", updateParallax, { passive: true });
-      } else {
-        document.querySelectorAll(".reveal").forEach((element) => element.classList.add("is-visible"));
-      }
-    </script>
-  </body>
-</html>
+  <footer>
+    <a class="brand brand--footer" href="#inicio">
+      <span class="brand-mark">RH</span>
+      <span class="brand-copy"><strong>RAQUEL HEDO</strong><small>ARCHITECTURE & INTERIORS</small></span>
+    </a>
+    <p>Arquitectura residencial · Interiorismo · Decoración</p>
+    <div><span>© 2026 RAQUEL HEDO</span><a href="#inicio">VOLVER ARRIBA ↑</a></div>
+  </footer>
+</Layout>
