@@ -9,6 +9,8 @@ Le dossier `raquel-projects/` contient la première sélection issue des photos
 transmises par la cliente. Les noms décrivent l'emplacement actuel dans le site :
 
 - `hero-living-room.jpg` : image principale de la page d'accueil ;
+- `hero-exterior.jpg`, `hero-open-plan.jpg` et `hero-bathroom.jpg` : images
+  complémentaires du slider d'accueil ;
 - `editorial-pool.jpg` : grande image éditoriale intermédiaire ;
 - `portfolio-*.jpg` : six images utilisées dans la galerie filtrable.
 

@@ -55,7 +55,12 @@ const steps = [
 
   <main>
     <section class="hero" id="inicio">
-      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-image" data-hero-slider aria-label="Selección de proyectos de Raquel Hedo">
+        <img class="hero-slide is-active" src="/assets/raquel-projects/hero-living-room.jpg" alt="Sala residencial de doble altura" fetchpriority="high" />
+        <img class="hero-slide" src="/assets/raquel-projects/hero-exterior.jpg" alt="Arquitectura residencial integrada al paisaje" />
+        <img class="hero-slide" src="/assets/raquel-projects/hero-open-plan.jpg" alt="Área social abierta con comedor, sala y cocina" />
+        <img class="hero-slide" src="/assets/raquel-projects/hero-bathroom.jpg" alt="Baño residencial con materiales naturales" />
+      </div>
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-content">
@@ -70,6 +75,16 @@ const steps = [
       <div class="hero-signature">
         <span>Desde 2001</span>
         <span>Architecture & Interiors</span>
+      </div>
+      <div class="hero-slider-controls" aria-label="Controles del slider">
+        <button type="button" data-slider-previous aria-label="Imagen anterior">←</button>
+        <div class="hero-slider-dots" role="group" aria-label="Elegir imagen">
+          <button class="is-active" type="button" data-slider-dot="0" aria-label="Mostrar imagen 1" aria-pressed="true"></button>
+          <button type="button" data-slider-dot="1" aria-label="Mostrar imagen 2" aria-pressed="false"></button>
+          <button type="button" data-slider-dot="2" aria-label="Mostrar imagen 3" aria-pressed="false"></button>
+          <button type="button" data-slider-dot="3" aria-label="Mostrar imagen 4" aria-pressed="false"></button>
+        </div>
+        <button type="button" data-slider-next aria-label="Imagen siguiente">→</button>
       </div>
       <a class="scroll-cue" href="#estudio" aria-label="Ir a la siguiente sección"><span>Scroll</span><b>↓</b></a>
     </section>
