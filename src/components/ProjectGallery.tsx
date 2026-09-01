@@ -6,34 +6,50 @@ const projects = [
   {
     id: '01',
     category: 'Interiores',
-    title: 'Referencia editorial 01',
-    type: 'Imagen provisional',
-    image: '/assets/architecture/portfolio-reference-01.jpg',
+    title: 'Comedor & luz',
+    type: 'Espacio residencial',
+    image: '/assets/raquel-projects/portfolio-dining-room.jpg',
     layout: 'wide',
   },
   {
     id: '02',
-    category: 'Arquitectura',
-    title: 'Referencia editorial 02',
-    type: 'Imagen provisional',
-    image: '/assets/architecture/portfolio-reference-02.jpg',
+    category: 'Interiores',
+    title: 'Suite principal',
+    type: 'Interiorismo residencial',
+    image: '/assets/raquel-projects/portfolio-bedroom.jpg',
     layout: 'tall',
   },
   {
     id: '03',
     category: 'Remodelación',
-    title: 'Referencia editorial 03',
-    type: 'Imagen provisional',
-    image: '/assets/architecture/portfolio-reference-03.jpg',
+    title: 'Materia & bienestar',
+    type: 'Baño residencial',
+    image: '/assets/raquel-projects/portfolio-bathroom.jpg',
     layout: 'square',
   },
   {
     id: '04',
     category: 'Interiores',
-    title: 'Referencia editorial 04',
-    type: 'Imagen provisional',
-    image: '/assets/architecture/portfolio-reference-04.jpg',
+    title: 'Mobiliario & ritmo',
+    type: 'Diseño a medida',
+    image: '/assets/raquel-projects/portfolio-custom-divider.jpg',
     layout: 'wide',
+  },
+  {
+    id: '05',
+    category: 'Interiores',
+    title: 'Color & carácter',
+    type: 'Sala de estar',
+    image: '/assets/raquel-projects/portfolio-red-living-room.jpg',
+    layout: 'wide',
+  },
+  {
+    id: '06',
+    category: 'Arquitectura',
+    title: 'Materia & paisaje',
+    type: 'Arquitectura residencial',
+    image: '/assets/raquel-projects/portfolio-residential-exterior.jpg',
+    layout: 'tall',
   },
 ] as const;
 
@@ -66,7 +82,7 @@ export default function ProjectGallery() {
         {visible.map((project) => (
           <article className={`project-card project-card--${project.layout}`} key={project.id}>
             <div className="project-image-wrap">
-              <img src={project.image} alt={`${project.title}, imagen arquitectónica provisional`} loading="lazy" />
+              <img src={project.image} alt={`${project.title}, proyecto de Raquel Hedo`} loading="lazy" />
               <span className="project-number">{project.id}</span>
               <span className="project-open" aria-hidden="true">↗</span>
             </div>

@@ -3,6 +3,18 @@
 Toutes les images de ce dossier servent uniquement à la maquette et doivent être
 remplacées par les photographies validées de Raquel Hedo.
 
+## Sélection Raquel
+
+Le dossier `raquel-projects/` contient la première sélection issue des photos
+transmises par la cliente. Les noms décrivent l'emplacement actuel dans le site :
+
+- `hero-living-room.jpg` : image principale de la page d'accueil ;
+- `editorial-pool.jpg` : grande image éditoriale intermédiaire ;
+- `portfolio-*.jpg` : six images utilisées dans la galerie filtrable.
+
+Les noms et catégories des projets devront être confirmés par Raquel avant la
+publication définitive.
+
 ## Architecture
 
 - `architecture/hero-reference.jpg` : image plein écran du hero.
