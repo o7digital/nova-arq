@@ -135,7 +135,7 @@ img { display: block; width: 100%; }
 .project-meta h3 { margin-top: 7px; font-family: var(--serif); font-weight: 400; font-size: clamp(27px, 3vw, 42px); }
 
 .quote-section { position: relative; min-height: 830px; color: white; display: grid; place-items: center; overflow: hidden; }
-.quote-image { position: absolute; inset: 0; background: url('/assets/raquel-projects/editorial-pool.jpg') center 58% / cover; }
+.quote-image { position: absolute; inset: 0; background: url('/assets/raquel-projects/editorial-pool.webp') center 58% / cover; }
 .quote-overlay { position: absolute; inset: 0; background: rgba(19,20,16,.55); }
 .quote-content { position: relative; z-index: 2; max-width: 1100px; padding: 90px 24px; text-align: center; }
 .quote-content p { margin: 0; font-family: var(--serif); font-size: clamp(42px, 6vw, 86px); line-height: 1.12; }

@@ -8,11 +8,11 @@ remplacées par les photographies validées de Raquel Hedo.
 Le dossier `raquel-projects/` contient la première sélection issue des photos
 transmises par la cliente. Les noms décrivent l'emplacement actuel dans le site :
 
-- `hero-living-room.jpg` : image principale de la page d'accueil ;
-- `hero-exterior.jpg`, `hero-open-plan.jpg` et `hero-bathroom.jpg` : images
+- `hero-living-room.webp` : image principale de la page d'accueil ;
+- `hero-exterior.webp`, `hero-open-plan.webp` et `hero-bathroom.webp` : images
   complémentaires du slider d'accueil ;
-- `editorial-pool.jpg` : grande image éditoriale intermédiaire ;
-- `portfolio-*.jpg` : six images utilisées dans la galerie filtrable.
+- `editorial-pool.webp` : grande image éditoriale intermédiaire ;
+- `portfolio-*.webp` : six images utilisées dans la galerie filtrable.
 
 Les noms et catégories des projets devront être confirmés par Raquel avant la
 publication définitive.

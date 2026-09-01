@@ -8,7 +8,7 @@ const projects = [
     category: 'Interiores',
     title: 'Comedor & luz',
     type: 'Espacio residencial',
-    image: '/assets/raquel-projects/portfolio-dining-room.jpg',
+    image: '/assets/raquel-projects/portfolio-dining-room.webp',
     layout: 'wide',
   },
   {
@@ -16,7 +16,7 @@ const projects = [
     category: 'Interiores',
     title: 'Suite principal',
     type: 'Interiorismo residencial',
-    image: '/assets/raquel-projects/portfolio-bedroom.jpg',
+    image: '/assets/raquel-projects/portfolio-bedroom.webp',
     layout: 'tall',
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     category: 'Remodelación',
     title: 'Materia & bienestar',
     type: 'Baño residencial',
-    image: '/assets/raquel-projects/portfolio-bathroom.jpg',
+    image: '/assets/raquel-projects/portfolio-bathroom.webp',
     layout: 'square',
   },
   {
@@ -32,7 +32,7 @@ const projects = [
     category: 'Interiores',
     title: 'Mobiliario & ritmo',
     type: 'Diseño a medida',
-    image: '/assets/raquel-projects/portfolio-custom-divider.jpg',
+    image: '/assets/raquel-projects/portfolio-custom-divider.webp',
     layout: 'wide',
   },
   {
@@ -40,7 +40,7 @@ const projects = [
     category: 'Interiores',
     title: 'Color & carácter',
     type: 'Sala de estar',
-    image: '/assets/raquel-projects/portfolio-red-living-room.jpg',
+    image: '/assets/raquel-projects/portfolio-red-living-room.webp',
     layout: 'wide',
   },
   {
@@ -48,7 +48,7 @@ const projects = [
     category: 'Arquitectura',
     title: 'Materia & paisaje',
     type: 'Arquitectura residencial',
-    image: '/assets/raquel-projects/portfolio-residential-exterior.jpg',
+    image: '/assets/raquel-projects/portfolio-residential-exterior.webp',
     layout: 'tall',
   },
 ] as const;
