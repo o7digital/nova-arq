@@ -31,7 +31,9 @@ Des images JPG ou WebP d'au moins 1 600 px de large sont recommandées.
 
 ## Portrait
 
-- `portrait/raquel-hedo-reference.png` : portrait provisoire extrait du CV.
+- `portrait/raquel-hedo.webp` : portrait actuel de Raquel Hedo, optimisé en WebP.
+- `portrait/raquel-hedo-reference.png` : ancien portrait provisoire extrait du CV,
+  conservé comme référence.
 
 Conserver le cadrage vertical avec le visage centré. Une image d'au moins
 1 200 px de haut est recommandée pour la version définitive.
