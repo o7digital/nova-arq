@@ -24,7 +24,7 @@ img { display: block; width: 100%; }
   position: absolute;
   inset: 0 0 auto;
   z-index: 20;
-  height: 112px;
+  height: 140px;
   padding: 0 clamp(24px, 7vw, 112px);
   display: flex;
   align-items: center;
@@ -33,33 +33,35 @@ img { display: block; width: 100%; }
   border-bottom: 1px solid rgba(255,255,255,.25);
 }
 
-.brand { display: inline-flex; align-items: center; gap: 15px; }
+.brand { display: inline-flex; align-items: center; gap: 19px; }
 .brand-mark {
-  width: 50px;
-  height: 50px;
+  width: 63px;
+  height: 63px;
   display: grid;
   place-items: center;
   border: 1px solid currentColor;
   font-family: var(--serif);
-  font-size: 20px;
+  font-size: 25px;
   letter-spacing: -.05em;
 }
-.brand-copy { display: grid; gap: 4px; }
-.brand-copy strong { font-size: 13px; letter-spacing: .2em; font-weight: 500; }
-.brand-copy small { font-size: 8px; letter-spacing: .16em; opacity: .72; }
-.site-nav { display: flex; align-items: center; gap: clamp(26px, 4vw, 62px); font-size: 12px; letter-spacing: .14em; font-weight: 500; }
+.brand-copy { display: grid; gap: 5px; }
+.brand-copy strong { font-size: 16px; letter-spacing: .2em; font-weight: 500; }
+.brand-copy small { font-size: 10px; letter-spacing: .16em; opacity: .72; }
+.site-nav { display: flex; align-items: center; gap: clamp(32px, 4vw, 62px); font-size: 15px; letter-spacing: .14em; font-weight: 500; }
 .site-nav > a:not(.nav-contact) { position: relative; }
 .site-nav > a:not(.nav-contact)::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 0; height: 1px; background: currentColor; transition: width .25s; }
 .site-nav > a:hover::after { width: 100%; }
-.nav-contact { padding: 16px 20px; border: 1px solid rgba(255,255,255,.55); display: flex; gap: 34px; transition: background .25s, color .25s; }
+.nav-contact { padding: 20px 25px; border: 1px solid rgba(255,255,255,.55); display: flex; gap: 42px; transition: background .25s, color .25s; }
 .nav-contact:hover { color: var(--ink); background: var(--paper); }
-.menu-button { display: none; border: 0; background: transparent; color: inherit; padding: 10px 0; }
-.menu-button span { display: block; width: 28px; height: 1px; background: currentColor; margin: 6px 0; }
+.menu-button { display: none; border: 0; background: transparent; color: inherit; padding: 13px 0; cursor: pointer; }
+.menu-button span { display: block; width: 35px; height: 2px; background: currentColor; margin: 7px 0; transition: transform .25s ease; }
+.menu-button[aria-expanded='true'] span:first-child { transform: translateY(4.5px) rotate(45deg); }
+.menu-button[aria-expanded='true'] span:last-child { transform: translateY(-4.5px) rotate(-45deg); }
 
 .hero { min-height: 100vh; height: max(780px, 100vh); position: relative; overflow: hidden; color: white; background: var(--ink); }
 .hero-image { position: absolute; inset: 0; background: url('/assets/architecture/hero-reference.jpg') center 48% / cover; transform: scale(1.02); animation: heroScale 14s ease-out both; }
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(13,14,11,.88) 0%, rgba(13,14,11,.62) 48%, rgba(13,14,11,.22) 76%), linear-gradient(0deg, rgba(13,14,11,.46), transparent 55%); }
-.hero-grid { position: absolute; inset: 112px 0 0; background-image: linear-gradient(90deg, transparent calc(25% - .5px), rgba(255,255,255,.11) 25%, transparent calc(25% + .5px)), linear-gradient(90deg, transparent calc(50% - .5px), rgba(255,255,255,.11) 50%, transparent calc(50% + .5px)), linear-gradient(90deg, transparent calc(75% - .5px), rgba(255,255,255,.11) 75%, transparent calc(75% + .5px)); }
+.hero-grid { position: absolute; inset: 140px 0 0; background-image: linear-gradient(90deg, transparent calc(25% - .5px), rgba(255,255,255,.11) 25%, transparent calc(25% + .5px)), linear-gradient(90deg, transparent calc(50% - .5px), rgba(255,255,255,.11) 50%, transparent calc(50% + .5px)), linear-gradient(90deg, transparent calc(75% - .5px), rgba(255,255,255,.11) 75%, transparent calc(75% + .5px)); }
 .hero-content { position: relative; z-index: 2; padding: 210px clamp(24px, 7vw, 112px) 130px; width: min(930px, 74vw); }
 .eyebrow { margin: 0 0 26px; display: flex; align-items: center; gap: 14px; font-size: 11px; font-weight: 500; letter-spacing: .23em; text-transform: uppercase; }
 .eyebrow span { display: inline-block; width: 38px; height: 1px; background: currentColor; opacity: .7; }
@@ -187,16 +189,16 @@ footer > div { grid-column: 1 / -1; padding-top: 30px; border-top: 1px solid rgb
 
 @media (max-width: 900px) {
   body.menu-open { overflow: hidden; }
-  .site-header { height: 90px; }
-  .brand-mark { width: 43px; height: 43px; }
-  .site-nav { position: absolute; top: 90px; left: 0; right: 0; display: none; padding: 28px 24px; background: var(--ink); flex-direction: column; align-items: stretch; gap: 0; }
+  .site-header { height: 112px; }
+  .brand-mark { width: 54px; height: 54px; }
+  .site-nav { position: absolute; top: 112px; left: 0; right: 0; display: none; padding: 28px 24px; background: var(--ink); flex-direction: column; align-items: stretch; gap: 0; font-size: 15px; }
   .site-nav.is-open { display: flex; }
   .site-nav a { padding: 15px 0; }
   .nav-contact { border: 0; justify-content: space-between; }
   .menu-button { display: block; }
   .hero { height: max(730px, 100svh); }
-  .hero-grid { inset: 90px 0 0; }
-  .hero-content { padding-top: 180px; width: 100%; }
+  .hero-grid { inset: 112px 0 0; }
+  .hero-content { padding-top: 200px; width: 100%; }
   .hero h1 { font-size: clamp(58px, 12vw, 96px); }
   .hero-signature { left: 24px; right: auto; }
   .scroll-cue { display: none; }
@@ -220,7 +222,7 @@ footer > div { grid-column: 1 / -1; padding-top: 30px; border-top: 1px solid rgb
 @media (max-width: 620px) {
   .brand-copy small { display: none; }
   .site-header { padding-inline: 20px; }
-  .hero-content { padding: 160px 20px 120px; }
+  .hero-content { padding: 185px 20px 120px; }
   .hero h1 { font-size: clamp(54px, 18vw, 78px); line-height: .92; }
   .hero-intro { font-size: 15px; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 16px; }
