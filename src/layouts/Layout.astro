@@ -59,7 +59,11 @@ const { title, description, lang = 'es' } = Astro.props;
         menu?.classList.toggle('is-open', !open);
         document.body.classList.toggle('menu-open', !open);
       });
-      menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+      menu?.querySelectorAll('a').forEach((link) => {
+        // Keep the language link in place until the browser starts navigation.
+        // Hiding its mobile menu ancestor during the tap can cancel navigation in Safari.
+        if (!link.closest('.language-switcher')) link.addEventListener('click', closeMenu);
+      });
       document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') closeMenu();
       });

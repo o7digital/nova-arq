@@ -61,7 +61,7 @@ img { display: block; width: 100%; }
 .language-switcher > button { padding: 10px 0; border: 0; color: inherit; background: transparent; font-size: 10px; font-weight: 600; letter-spacing: .14em; cursor: pointer; }
 .language-switcher > div { position: absolute; top: 100%; left: 50%; min-width: 62px; padding: 8px 0; display: grid; background: var(--coffee); border: 1px solid rgba(255,255,255,.28); opacity: 0; visibility: hidden; transform: translate(-50%,8px); transition: .2s; }
 .language-switcher:hover > div, .language-switcher:focus-within > div { opacity: 1; visibility: visible; transform: translate(-50%,0); }
-.language-switcher a { padding: 7px 13px; font-size: 9px; text-align: center; letter-spacing: .12em; opacity: .58; }
+.language-switcher a { padding: 7px 13px; font-size: 9px; text-align: center; letter-spacing: .12em; text-transform: uppercase; opacity: .58; }
 .language-switcher a:hover, .language-switcher a.active { opacity: 1; color: var(--sand); }
 .menu-button { display: none; border: 0; background: transparent; color: inherit; padding: 13px 0; cursor: pointer; }
 .menu-button span { display: block; width: 35px; height: 2px; background: currentColor; margin: 7px 0; transition: transform .25s ease; }
@@ -326,8 +326,8 @@ footer { min-height: 280px; padding: 55px clamp(24px, 7vw, 112px) 34px; backgrou
   .site-nav a { padding: 15px 0; }
   .language-switcher { order: 4; padding: 10px 0; }
   .language-switcher > button { display: none; }
-  .language-switcher > div { position: static; display: flex; gap: 8px; padding: 0; border: 0; opacity: 1; visibility: visible; transform: none; }
-  .language-switcher a { padding: 10px 14px 10px 0; }
+  .language-switcher > div { position: static; display: flex; gap: 4px; padding: 0; border: 0; opacity: 1; visibility: visible; transform: none; }
+  .language-switcher a { min-width: 44px; min-height: 44px; padding: 0; display: inline-flex; align-items: center; justify-content: flex-start; position: relative; z-index: 1; text-transform: uppercase; touch-action: manipulation; }
   .nav-contact { border: 0; justify-content: space-between; }
   .menu-button { display: block; }
   .hero { height: max(730px, 100svh); }

@@ -12,6 +12,13 @@ const labels: Record<string, string[]> = {
   pt: ['Estúdio', 'Projetos', 'Serviços', 'Vamos conversar', 'Abrir menu', 'Contacto', 'FAQ'],
 };
 const l = labels[locale] ?? labels.es;
+const languageHref = (code: string, prefix: string) => {
+  const translatedPath = alternates?.[code];
+  if (translatedPath) return translatedPath;
+
+  const path = alternatePath || '/';
+  return `${prefix}${path}` || '/';
+};
 ---
 <header class="site-header">
   <a class="brand" href={`${base}/#inicio`} aria-label="Raquel Hedo, inicio">
@@ -25,7 +32,7 @@ const l = labels[locale] ?? labels.es;
     <a class:list={{ active: current === 'servicios' }} href={`${base}/#servicios`}>{l[2]}</a>
     <a href={`${base}/#contacto`}>{l[5]}</a>
     <a href={`${base}/#faq`}>{l[6]}</a>
-    <div class="language-switcher" aria-label="Language"><button type="button">{locale.toUpperCase()}⌄</button><div>{Object.entries(prefixes).map(([code, prefix]) => <a class:list={{ active: code === locale }} href={alternates?.[code] ?? `${prefix}${alternatePath}`}>{code.toUpperCase()}</a>)}</div></div>
+    <div class="language-switcher" aria-label="Language"><button type="button">{locale.toUpperCase()}⌄</button><div>{Object.entries(prefixes).map(([code, prefix]) => <a class:list={{ active: code === locale }} href={languageHref(code, prefix)} lang={code} hreflang={code} aria-current={code === locale ? 'page' : undefined}>{code.toUpperCase()}</a>)}</div></div>
     <a class="nav-contact" href={`${base}/#contacto`}>{l[3]} <span>↗</span></a>
   </nav>
 </header>
