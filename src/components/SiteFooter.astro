@@ -5,6 +5,7 @@ const prefixes: Record<string,string> = { es: '', en: '/en', fr: '/fr', it: '/it
 const base = prefixes[locale] ?? '';
 const labels: Record<string,string[]> = { es:['Estudio','Proyectos','Servicios','Hablemos','Ubicación','VOLVER ARRIBA'], en:['Studio','Projects','Services','Let’s talk','Location','BACK TO TOP'], fr:['Studio','Projets','Services','Parlons-nous','Localisation','RETOUR EN HAUT'], it:['Studio','Progetti','Servizi','Parliamo','Sede','TORNA SU'] };
 const l = labels[locale] ?? labels.es;
+const privacy = locale === 'es' ? '/aviso-de-privacidad/' : `/${locale}/privacy/`;
 ---
 <footer>
   <a class="brand brand--footer" href={`${base}/#inicio`}>
@@ -15,5 +16,5 @@ const l = labels[locale] ?? labels.es;
     <a href={`${base}/#estudio`}>{l[0]}</a><a href={`${base}/#proyectos`}>{l[1]}</a><a href={`${base}/#servicios`}>{l[2]}</a><a href={`${base}/#contacto`}>{l[3]}</a>
   </nav>
   <div class="footer-location"><span>{l[4]}</span><address>México · CDMX</address><p>Architecture · Interiors · Decoration</p></div>
-  <div class="footer-bottom"><span>© 2026 RAQUEL HEDO</span><a href="#top">{l[5]} ↑</a></div>
+  <div class="footer-bottom"><span>© 2026 RAQUEL HEDO</span><a href={privacy}>{locale==='es'?'AVISO DE PRIVACIDAD':locale==='fr'?'CONFIDENTIALITÉ':locale==='it'?'PRIVACY':'PRIVACY NOTICE'}</a><a href="#top">{l[5]} ↑</a></div>
 </footer>

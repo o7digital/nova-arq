@@ -284,6 +284,22 @@ img { display: block; width: 100%; }
 .form-submit { display: flex; align-items: center; gap: 26px; }
 .form-submit button { border: 0; cursor: pointer; }
 .form-submit small { max-width: 210px; color: rgba(23,23,18,.58); font-size: 10px; line-height: 1.5; }
+.contact-form .form-consent { display:flex; grid-template-columns:none; align-items:flex-start; gap:10px; }
+.contact-form .form-consent input { width:15px; margin:1px 0 0; }
+.contact-form .form-consent span { font-size:10px; letter-spacing:.02em; line-height:1.5; text-transform:none; }
+.form-consent a { border-bottom:1px solid currentColor; }
+
+.legal-page { padding: 240px clamp(24px,7vw,112px) 130px; background:var(--paper-bright); }
+.legal-page > header { max-width:1050px; padding-bottom:80px; border-bottom:1px solid var(--line); }
+.legal-page h1 { margin:0; font:400 clamp(60px,9vw,135px)/.92 var(--serif); letter-spacing:-.05em; }
+.legal-page header > p:not(.eyebrow) { max-width:720px; margin:38px 0 22px; font-size:17px; line-height:1.75; }
+.legal-page header small { font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:#777367; }
+.legal-body { max-width:920px; margin:90px 0 0 auto; }
+.legal-body section { display:grid; grid-template-columns:.75fr 1.5fr; gap:50px; padding:34px 0; border-bottom:1px solid var(--line); }
+.legal-body h2 { margin:0; font:400 25px/1.25 var(--serif); }
+.legal-body p { margin:0; font-size:14px; line-height:1.85; color:#555248; }
+.legal-page aside { margin-top:100px; padding:55px; display:flex; align-items:center; justify-content:space-between; gap:40px; background:var(--sand); }
+.legal-page aside p { margin:0; font:400 clamp(28px,4vw,50px) var(--serif); }
 .button--dark { background: var(--ink); color: var(--paper); }
 .button--dark:hover { background: var(--olive); }
 .button--static { cursor: default; }
@@ -416,6 +432,9 @@ footer { min-height: 280px; padding: 55px clamp(24px, 7vw, 112px) 34px; backgrou
   .footer-nav { justify-self: start; margin-top: 8px; }
   .footer-location { justify-self: start; text-align: left; }
   .footer-bottom { grid-column: 1; gap: 20px; flex-direction: column; }
+  .legal-page { padding:180px 20px 80px; }
+  .legal-body section { grid-template-columns:1fr; gap:15px; }
+  .legal-page aside { padding:35px 25px; align-items:flex-start; flex-direction:column; }
 }
 
 @media (prefers-reduced-motion: reduce) {

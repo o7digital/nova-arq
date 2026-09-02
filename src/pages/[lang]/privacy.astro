@@ -1,0 +1,6 @@
+---
+import Layout from '../../layouts/Layout.astro'; import PrivacyPage from '../../components/PrivacyPage.astro';
+export function getStaticPaths(){return ['en','fr','it'].map(lang=>({params:{lang},props:{locale:lang}}));} const locale=Astro.props.locale as 'en'|'fr'|'it';
+const titles={en:'Privacy notice',fr:'Politique de confidentialité',it:'Informativa sulla privacy'};
+---
+<Layout title={`${titles[locale]} | Raquel Hedo`} description={titles[locale]} lang={locale}><PrivacyPage locale={locale}/></Layout>
