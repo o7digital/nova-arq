@@ -5,6 +5,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { services } from '../data/services';
 import ContactForm from '../components/ContactForm.astro';
+import FaqSection from '../components/FaqSection.astro';
 
 const steps = [
   { number: 'I', title: 'Escuchar', text: 'Entender la vida, las necesidades y la ambición detrás de cada espacio.' },
@@ -148,6 +149,8 @@ const steps = [
     <section class="worldline">
       <p>UNIVERSIDAD ANÁHUAC</p><span>·</span><p>BOSTON</p><span>·</span><p>HARVARD</p><span>·</span><p>PITTSBURGH</p><span>·</span><p>FLORENCIA</p><span>·</span><p>SUIZA</p>
     </section>
+
+    <FaqSection />
 
     <section class="contact section-pad" id="contacto">
       <div class="contact-copy" data-reveal>
