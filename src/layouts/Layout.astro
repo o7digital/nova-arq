@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import OliviaAI from '../components/OliviaAI.astro';
 
 interface Props {
   title: string;
@@ -33,6 +34,7 @@ const { title, description, lang = 'es' } = Astro.props;
   </head>
   <body>
     <slot />
+    <OliviaAI />
     <script is:inline>
       const observer = new IntersectionObserver(
         (entries) => entries.forEach((entry) => {
