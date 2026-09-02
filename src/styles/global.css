@@ -327,7 +327,7 @@ footer { min-height: 280px; padding: 55px clamp(24px, 7vw, 112px) 34px; backgrou
   .language-switcher { order: 4; padding: 10px 0; }
   .language-switcher > button { display: none; }
   .language-switcher > div { position: static; display: flex; gap: 4px; padding: 0; border: 0; opacity: 1; visibility: visible; transform: none; }
-  .language-switcher a { min-width: 44px; min-height: 44px; padding: 0; display: inline-flex; align-items: center; justify-content: flex-start; position: relative; z-index: 1; text-transform: uppercase; touch-action: manipulation; }
+  .language-switcher a { min-width: 44px; min-height: 44px; padding: 0; display: inline-flex; align-items: center; justify-content: flex-start; position: relative; z-index: 1; font-size: 15px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; touch-action: manipulation; }
   .nav-contact { border: 0; justify-content: space-between; }
   .menu-button { display: block; }
   .hero { height: max(730px, 100svh); }
