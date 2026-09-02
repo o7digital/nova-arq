@@ -4,6 +4,7 @@ import ProjectGallery from '../components/ProjectGallery';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { services } from '../data/services';
+import ContactForm from '../components/ContactForm.astro';
 
 const steps = [
   { number: 'I', title: 'Escuchar', text: 'Entender la vida, las necesidades y la ambición detrás de cada espacio.' },
@@ -153,7 +154,7 @@ const steps = [
         <p class="eyebrow"><span></span> Conversemos</p>
         <h2>Tu próximo espacio empieza con una conversación.</h2>
         <p>Cuando estén disponibles los datos de contacto definitivos, este espacio permitirá iniciar una conversación sobre el proyecto.</p>
-        <span class="button button--dark button--static">Iniciar un proyecto <span>↗</span></span>
+        <ContactForm />
       </div>
       <div class="contact-monogram" aria-hidden="true">RH</div>
     </section>

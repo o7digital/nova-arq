@@ -4,10 +4,10 @@ const { current, locale = 'es', alternatePath = '', alternates } = Astro.props;
 const prefixes: Record<string, string> = { es: '', en: '/en', fr: '/fr', it: '/it' };
 const base = prefixes[locale] ?? '';
 const labels: Record<string, string[]> = {
-  es: ['Estudio', 'Proyectos', 'Servicios', 'Hablemos', 'Abrir menú'],
-  en: ['Studio', 'Projects', 'Services', 'Let’s talk', 'Open menu'],
-  fr: ['Studio', 'Projets', 'Services', 'Parlons-nous', 'Ouvrir le menu'],
-  it: ['Studio', 'Progetti', 'Servizi', 'Parliamo', 'Apri il menu'],
+  es: ['Estudio', 'Proyectos', 'Servicios', 'Hablemos', 'Abrir menú', 'Contacto'],
+  en: ['Studio', 'Projects', 'Services', 'Let’s talk', 'Open menu', 'Contact'],
+  fr: ['Studio', 'Projets', 'Services', 'Parlons-nous', 'Ouvrir le menu', 'Contact'],
+  it: ['Studio', 'Progetti', 'Servizi', 'Parliamo', 'Apri il menu', 'Contatti'],
 };
 const l = labels[locale] ?? labels.es;
 ---
@@ -21,6 +21,7 @@ const l = labels[locale] ?? labels.es;
     <a class:list={{ active: current === 'estudio' }} href={`${base}/#estudio`}>{l[0]}</a>
     <a class:list={{ active: current === 'proyectos' }} href={`${base}/#proyectos`}>{l[1]}</a>
     <a class:list={{ active: current === 'servicios' }} href={`${base}/#servicios`}>{l[2]}</a>
+    <a href={`${base}/#contacto`}>{l[5]}</a>
     <div class="language-switcher" aria-label="Language"><button type="button">{locale.toUpperCase()}⌄</button><div>{Object.entries(prefixes).map(([code, prefix]) => <a class:list={{ active: code === locale }} href={alternates?.[code] ?? `${prefix}${alternatePath}`}>{code.toUpperCase()}</a>)}</div></div>
     <a class="nav-contact" href={`${base}/#contacto`}>{l[3]} <span>↗</span></a>
   </nav>

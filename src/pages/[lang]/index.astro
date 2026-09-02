@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import ProjectGallery from '../../components/ProjectGallery';
+import ContactForm from '../../components/ContactForm.astro';
 import { homeCopy, getLocalizedServices, localeConfig, type Locale } from '../../data/i18n';
 
 export function getStaticPaths() { return Object.keys(localeConfig).map((lang) => ({ params:{ lang }, props:{ locale:lang } })); }
@@ -32,6 +33,6 @@ const servicePath = localeConfig[locale].servicesPath;
     <section class="process section-pad"><div class="process-top" data-reveal><p class="eyebrow"><span></span>{t.processEye}</p><h2>{t.processTitle}</h2><p>{t.processText}</p></div><div class="process-grid">{t.steps.map(([number,title,text])=><article data-reveal><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
     <section class="profile section-pad"><div class="profile-visual" data-reveal><div class="portrait-frame"><img src="/assets/portrait/raquel-hedo.webp" alt="Raquel Hedo" loading="lazy"/></div><div class="profile-years"><strong>≈25</strong><span>{t.years}</span></div></div><div class="profile-copy" data-reveal><p class="eyebrow"><span></span>{t.profileEye}</p><h2>{t.profileTitle}</h2><p class="profile-lead">{t.profileLead}</p><p>{t.profileText}</p><div class="credentials"><div><strong>4</strong><span>{t.languages}<br/>ES · EN · FR · IT</span></div><div><strong>360°</strong><span>Design, budget<br/>& execution</span></div><div><strong>2001</strong><span>{t.practice}</span></div></div></div></section>
     <section class="worldline"><p>UNIVERSIDAD ANÁHUAC</p><span>·</span><p>BOSTON</p><span>·</span><p>HARVARD</p><span>·</span><p>PITTSBURGH</p><span>·</span><p>FIRENZE</p><span>·</span><p>SUISSE</p></section>
-    <section class="contact section-pad" id="contacto"><div class="contact-copy" data-reveal><p class="eyebrow"><span></span>{t.conversation}</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p><span class="button button--dark button--static">{t.contactButton}<span>↗</span></span></div><div class="contact-monogram">RH</div></section>
+    <section class="contact section-pad" id="contacto"><div class="contact-copy" data-reveal><p class="eyebrow"><span></span>{t.conversation}</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p><ContactForm locale={locale}/></div><div class="contact-monogram">RH</div></section>
   </main><SiteFooter locale={locale}/>
 </Layout>

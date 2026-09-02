@@ -1,0 +1,17 @@
+---
+interface Props { locale?: 'es' | 'en' | 'fr' | 'it' }
+const { locale = 'es' } = Astro.props;
+const copy = {
+  es:{ name:'Nombre',email:'Email',phone:'Teléfono',service:'Tipo de proyecto',choose:'Seleccionar',options:['Arquitectura residencial','Interiorismo & decoración','Remodelación integral','Dirección & detalle','Otro'],message:'Cuéntanos sobre tu proyecto',placeholder:'Ubicación, alcance, tiempos y todo lo que quieras compartir…',send:'Enviar consulta',note:'Responderemos personalmente a tu mensaje.' },
+  en:{ name:'Name',email:'Email',phone:'Phone',service:'Project type',choose:'Select',options:['Residential architecture','Interiors & decoration','Complete renovation','Direction & detail','Other'],message:'Tell us about your project',placeholder:'Location, scope, timing and anything else you would like to share…',send:'Send enquiry',note:'We will personally reply to your message.' },
+  fr:{ name:'Nom',email:'E-mail',phone:'Téléphone',service:'Type de projet',choose:'Sélectionner',options:['Architecture résidentielle','Architecture intérieure & décoration','Rénovation intégrale','Direction & détail','Autre'],message:'Parlez-nous de votre projet',placeholder:'Lieu, périmètre, calendrier et tout ce que vous souhaitez partager…',send:'Envoyer la demande',note:'Nous répondrons personnellement à votre message.' },
+  it:{ name:'Nome',email:'Email',phone:'Telefono',service:'Tipo di progetto',choose:'Seleziona',options:['Architettura residenziale','Interior design & decorazione','Ristrutturazione integrale','Direzione & dettaglio','Altro'],message:'Raccontaci il tuo progetto',placeholder:'Luogo, ambito, tempistiche e tutto ciò che desideri condividere…',send:'Invia richiesta',note:'Risponderemo personalmente al tuo messaggio.' },
+}[locale];
+---
+<form class="contact-form" action="https://formspree.io/f/xrpgkqzw" method="POST">
+  <input type="hidden" name="language" value={locale} />
+  <div class="form-row"><label><span>{copy.name} *</span><input name="name" type="text" autocomplete="name" required /></label><label><span>{copy.email} *</span><input name="email" type="email" autocomplete="email" required /></label></div>
+  <div class="form-row"><label><span>{copy.phone}</span><input name="phone" type="tel" autocomplete="tel" /></label><label><span>{copy.service} *</span><select name="service" required><option value="" selected disabled>{copy.choose}</option>{copy.options.map((option)=><option value={option}>{option}</option>)}</select></label></div>
+  <label><span>{copy.message} *</span><textarea name="message" rows="4" placeholder={copy.placeholder} required></textarea></label>
+  <div class="form-submit"><button class="button button--dark" type="submit">{copy.send}<span>↗</span></button><small>{copy.note}</small></div>
+</form>
