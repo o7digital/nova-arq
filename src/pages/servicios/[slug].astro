@@ -1,0 +1,64 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { services } from '../../data/services';
+
+export function getStaticPaths() {
+  return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
+}
+
+const { service } = Astro.props;
+const index = services.findIndex((item) => item.slug === service.slug);
+const next = services[(index + 1) % services.length];
+---
+<Layout title={`${service.title} | Raquel Hedo`} description={service.intro}>
+  <div id="top"></div>
+  <SiteHeader current="servicios" />
+  <main class="service-page">
+    <section class="service-hero">
+      <img src={service.hero} alt={service.title} fetchpriority="high" />
+      <div class="service-hero-overlay" aria-hidden="true"></div>
+      <div class="service-hero-content">
+        <a class="service-back" href="/#servicios">← Todos los servicios</a>
+        <div class="service-hero-title">
+          <span>{service.number}</span>
+          <div><p>{service.kicker}</p><h1>{service.title}</h1></div>
+        </div>
+        <p class="service-hero-intro">{service.intro}</p>
+      </div>
+      <span class="service-scroll">Explorar <b>↓</b></span>
+    </section>
+
+    <section class="service-belief section-pad">
+      <p class="eyebrow" data-reveal><span></span> Nuestra mirada</p>
+      <blockquote data-reveal>“{service.promise}”</blockquote>
+      <span class="service-belief-mark" aria-hidden="true">RH</span>
+    </section>
+
+    <section class="service-approach">
+      <div class="service-approach-image"><img src={service.detailImage} alt={`Detalle de ${service.title}`} loading="lazy" /></div>
+      <div class="service-approach-copy">
+        <p class="eyebrow"><span></span> Alcance integral</p>
+        <h2>De la intención<br />a la materia.</h2>
+        <p>Un acompañamiento cercano que integra sensibilidad creativa y rigor técnico durante todo el proceso.</p>
+        <ul>{service.scope.map((item, itemIndex) => <li><span>0{itemIndex + 1}</span>{item}</li>)}</ul>
+      </div>
+    </section>
+
+    <section class="service-method section-pad">
+      <div class="service-method-heading" data-reveal><p class="eyebrow"><span></span> Cómo lo hacemos</p><h2>Tres movimientos.<br /><em>Una sola visión.</em></h2></div>
+      <div class="service-method-grid">
+        {service.stages.map(([number, title, text]) => <article data-reveal><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}
+      </div>
+    </section>
+
+    <section class="service-image-break"><img src={service.galleryImage} alt={`Atmósfera de ${service.title}`} loading="lazy" /><p>Diseño que permanece.<br />Espacios que se viven.</p></section>
+
+    <section class="service-next section-pad">
+      <div><p class="eyebrow"><span></span> Siguiente disciplina</p><a href={`/servicios/${next.slug}/`}><span>{next.number}</span><h2>{next.title}</h2><b>→</b></a></div>
+      <div class="service-cta"><p>¿Tienes un espacio en mente?</p><h2>Hagámoslo<br /><em>extraordinario.</em></h2><a class="button button--dark" href="/#contacto">Iniciar conversación <span>↗</span></a></div>
+    </section>
+  </main>
+  <SiteFooter />
+</Layout>

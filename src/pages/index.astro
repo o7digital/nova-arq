@@ -1,29 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProjectGallery from '../components/ProjectGallery';
-
-const services = [
-  {
-    number: '01',
-    title: 'Arquitectura residencial',
-    text: 'Obra nueva, ampliaciones y espacios concebidos desde la forma de vivir de cada cliente.',
-  },
-  {
-    number: '02',
-    title: 'Interiorismo & decoración',
-    text: 'Concepto, materiales, color, iluminación y piezas que convierten una casa en un lugar propio.',
-  },
-  {
-    number: '03',
-    title: 'Remodelación integral',
-    text: 'Una visión completa para rediseñar, coordinar y ejecutar cada transformación con precisión.',
-  },
-  {
-    number: '04',
-    title: 'Dirección & detalle',
-    text: 'Supervisión de obra, presupuesto, proveedores, mobiliario a medida y control de calidad.',
-  },
-];
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { services } from '../data/services';
 
 const steps = [
   { number: 'I', title: 'Escuchar', text: 'Entender la vida, las necesidades y la ambición detrás de cada espacio.' },
@@ -37,21 +17,7 @@ const steps = [
   title="Raquel Hedo | Arquitectura & Interiorismo"
   description="Raquel Hedo crea proyectos de arquitectura residencial, interiorismo, decoración y remodelación integral con una visión personal, técnica y atemporal."
 >
-  <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Raquel Hedo, inicio">
-      <span class="brand-mark">RH</span>
-      <span class="brand-copy"><strong>RAQUEL HEDO</strong><small>ARCHITECTURE & INTERIORS</small></span>
-    </a>
-    <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" data-menu-button>
-      <span></span><span></span>
-    </button>
-    <nav class="site-nav" aria-label="Navegación principal" data-menu>
-      <a href="#estudio">Estudio</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#servicios">Servicios</a>
-      <a class="nav-contact" href="#contacto">Hablemos <span>↗</span></a>
-    </nav>
-  </header>
+  <SiteHeader />
 
   <main>
     <section class="hero" id="inicio">
@@ -131,12 +97,12 @@ const steps = [
       </div>
       <div class="service-list">
         {services.map((service) => (
-          <article class="service-row" data-reveal>
+          <a class="service-row" href={`/servicios/${service.slug}/`} data-reveal aria-label={`Descubrir ${service.title}`}>
             <span>{service.number}</span>
-            <h3>{service.title}</h3>
+            <div class="service-title"><h3>{service.title}</h3><small>Descubrir el servicio</small></div>
             <p>{service.text}</p>
-            <b aria-hidden="true">↗</b>
-          </article>
+            <b aria-hidden="true"><i>Ver</i> ↗</b>
+          </a>
         ))}
       </div>
     </section>
@@ -193,22 +159,5 @@ const steps = [
     </section>
   </main>
 
-  <footer>
-    <a class="brand brand--footer" href="#inicio">
-      <span class="brand-mark">RH</span>
-      <span class="brand-copy"><strong>RAQUEL HEDO</strong><small>ARCHITECTURE & INTERIORS</small></span>
-    </a>
-    <nav class="footer-nav" aria-label="Navegación del pie de página">
-      <a href="#estudio">Estudio</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Hablemos</a>
-    </nav>
-    <div class="footer-location">
-      <span>Ubicación</span>
-      <address>México · CDMX</address>
-      <p>Arquitectura residencial · Interiorismo · Decoración</p>
-    </div>
-    <div class="footer-bottom"><span>© 2026 RAQUEL HEDO</span><a href="#inicio">VOLVER ARRIBA ↑</a></div>
-  </footer>
+  <SiteFooter />
 </Layout>
