@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import { services } from '../../data/services';
+import { getLocalizedServices, localeConfig, type Locale } from '../../data/i18n';
 
 export function getStaticPaths() {
   return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
@@ -11,10 +12,11 @@ export function getStaticPaths() {
 const { service } = Astro.props;
 const index = services.findIndex((item) => item.slug === service.slug);
 const next = services[(index + 1) % services.length];
+const alternates = { es:`/servicios/${service.slug}/`, ...Object.fromEntries(Object.keys(localeConfig).map((key)=>{ const code=key as Locale; const config=localeConfig[code]; return [code,`/${code}/${config.servicesPath}/${getLocalizedServices(code)[index].slug}/`]; })) };
 ---
 <Layout title={`${service.title} | Raquel Hedo`} description={service.intro}>
   <div id="top"></div>
-  <SiteHeader current="servicios" />
+  <SiteHeader current="servicios" alternates={alternates} />
   <main class="service-page">
     <section class="service-hero">
       <img src={service.hero} alt={service.title} fetchpriority="high" />

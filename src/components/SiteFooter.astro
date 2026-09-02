@@ -1,11 +1,19 @@
+---
+interface Props { locale?: string }
+const { locale = 'es' } = Astro.props;
+const prefixes: Record<string,string> = { es: '', en: '/en', fr: '/fr', it: '/it' };
+const base = prefixes[locale] ?? '';
+const labels: Record<string,string[]> = { es:['Estudio','Proyectos','Servicios','Hablemos','Ubicación','VOLVER ARRIBA'], en:['Studio','Projects','Services','Let’s talk','Location','BACK TO TOP'], fr:['Studio','Projets','Services','Parlons-nous','Localisation','RETOUR EN HAUT'], it:['Studio','Progetti','Servizi','Parliamo','Sede','TORNA SU'] };
+const l = labels[locale] ?? labels.es;
+---
 <footer>
-  <a class="brand brand--footer" href="/#inicio">
+  <a class="brand brand--footer" href={`${base}/#inicio`}>
     <span class="brand-mark">RH</span>
     <span class="brand-copy"><strong>RAQUEL HEDO</strong><small>ARCHITECTURE & INTERIORS</small></span>
   </a>
   <nav class="footer-nav" aria-label="Navegación del pie de página">
-    <a href="/#estudio">Estudio</a><a href="/#proyectos">Proyectos</a><a href="/#servicios">Servicios</a><a href="/#contacto">Hablemos</a>
+    <a href={`${base}/#estudio`}>{l[0]}</a><a href={`${base}/#proyectos`}>{l[1]}</a><a href={`${base}/#servicios`}>{l[2]}</a><a href={`${base}/#contacto`}>{l[3]}</a>
   </nav>
-  <div class="footer-location"><span>Ubicación</span><address>México · CDMX</address><p>Arquitectura residencial · Interiorismo · Decoración</p></div>
-  <div class="footer-bottom"><span>© 2026 RAQUEL HEDO</span><a href="#top">VOLVER ARRIBA ↑</a></div>
+  <div class="footer-location"><span>{l[4]}</span><address>México · CDMX</address><p>Architecture · Interiors · Decoration</p></div>
+  <div class="footer-bottom"><span>© 2026 RAQUEL HEDO</span><a href="#top">{l[5]} ↑</a></div>
 </footer>

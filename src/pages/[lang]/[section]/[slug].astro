@@ -1,0 +1,26 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import { getLocalizedServices, localeConfig, type Locale } from '../../../data/i18n';
+
+export function getStaticPaths() {
+  return Object.keys(localeConfig).flatMap((key) => { const locale=key as Locale; return getLocalizedServices(locale).map((service)=>({ params:{lang:locale,section:localeConfig[locale].servicesPath,slug:service.slug}, props:{locale,service} })); });
+}
+const locale = Astro.props.locale as Locale;
+const service = Astro.props.service;
+const services = getLocalizedServices(locale);
+const next = services[(services.findIndex((item)=>item.slug===service.slug)+1)%services.length];
+const serviceIndex = services.findIndex((item)=>item.slug===service.slug);
+const prefix=`/${locale}`, section=localeConfig[locale].servicesPath;
+const alternates = { es:`/servicios/${(await import('../../../data/services')).services[serviceIndex].slug}/`, ...Object.fromEntries(Object.keys(localeConfig).map((key)=>{const code=key as Locale; const config=localeConfig[code]; return [code,`/${code}/${config.servicesPath}/${getLocalizedServices(code)[serviceIndex].slug}/`]})) };
+const labels={en:['All services','Our perspective','Comprehensive scope','From intention','to matter.','How we work','Three movements.','One vision.','Next discipline','Have a space in mind?','Let’s make it','extraordinary.','Start a conversation'],fr:['Tous les services','Notre regard','Une approche globale',"De l’intention",'à la matière.','Notre méthode','Trois mouvements.','Une seule vision.','Discipline suivante','Vous avez un espace en tête ?','Rendons-le','extraordinaire.','Démarrer une conversation'],it:['Tutti i servizi','Il nostro sguardo','Approccio integrale',"Dall’intenzione",'alla materia.','Il nostro metodo','Tre movimenti.','Una sola visione.','Servizio successivo','Hai uno spazio in mente?','Rendiamolo','straordinario.','Inizia una conversazione']}[locale];
+---
+<Layout title={`${service.title} | Raquel Hedo`} description={service.intro} lang={locale}><div id="top"></div><SiteHeader current="servicios" locale={locale} alternates={alternates}/><main class="service-page">
+<section class="service-hero"><img src={service.hero} alt={service.title} fetchpriority="high"/><div class="service-hero-overlay"></div><div class="service-hero-content"><a class="service-back" href={`${prefix}/#servicios`}>← {labels[0]}</a><div class="service-hero-title"><span>{service.number}</span><div><p>{service.kicker}</p><h1>{service.title}</h1></div></div><p class="service-hero-intro">{service.intro}</p></div></section>
+<section class="service-belief section-pad"><p class="eyebrow" data-reveal><span></span>{labels[1]}</p><blockquote data-reveal>“{service.promise}”</blockquote><span class="service-belief-mark">RH</span></section>
+<section class="service-approach"><div class="service-approach-image"><img src={service.detailImage} alt={service.title} loading="lazy"/></div><div class="service-approach-copy"><p class="eyebrow"><span></span>{labels[2]}</p><h2>{labels[3]}<br/>{labels[4]}</h2><ul>{service.scope.map((item:string,i:number)=><li><span>0{i+1}</span>{item}</li>)}</ul></div></section>
+<section class="service-method section-pad"><div class="service-method-heading" data-reveal><p class="eyebrow"><span></span>{labels[5]}</p><h2>{labels[6]}<br/><em>{labels[7]}</em></h2></div><div class="service-method-grid">{service.stages.map(([n,title,text]:string[])=><article data-reveal><span>{n}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
+<section class="service-image-break"><img src={service.galleryImage} alt={service.title} loading="lazy"/></section>
+<section class="service-next section-pad"><div><p class="eyebrow"><span></span>{labels[8]}</p><a href={`${prefix}/${section}/${next.slug}/`}><span>{next.number}</span><h2>{next.title}</h2><b>→</b></a></div><div class="service-cta"><p>{labels[9]}</p><h2>{labels[10]}<br/><em>{labels[11]}</em></h2><a class="button button--dark" href={`${prefix}/#contacto`}>{labels[12]}<span>↗</span></a></div></section>
+</main><SiteFooter locale={locale}/></Layout>

@@ -55,7 +55,15 @@ const projects = [
 
 const categories: Category[] = ['Todos', 'Arquitectura', 'Interiores', 'Remodelación'];
 
-export default function ProjectGallery() {
+const translations = {
+  es: { categories: ['Todos','Arquitectura','Interiores','Remodelación'], filter: 'Filtrar selección de proyectos', titles: ['Comedor & luz','Suite principal','Materia & bienestar','Mobiliario & ritmo','Color & carácter','Materia & paisaje'], types: ['Espacio residencial','Interiorismo residencial','Baño residencial','Diseño a medida','Sala de estar','Arquitectura residencial'] },
+  en: { categories: ['All','Architecture','Interiors','Renovation'], filter: 'Filter selected projects', titles: ['Dining & light','Primary suite','Material & wellbeing','Furniture & rhythm','Colour & character','Material & landscape'], types: ['Residential space','Residential interiors','Residential bathroom','Bespoke design','Living room','Residential architecture'] },
+  fr: { categories: ['Tous','Architecture','Intérieurs','Rénovation'], filter: 'Filtrer les projets', titles: ['Salle à manger & lumière','Suite principale','Matière & bien-être','Mobilier & rythme','Couleur & caractère','Matière & paysage'], types: ['Espace résidentiel','Architecture intérieure','Salle de bains','Création sur mesure','Salon','Architecture résidentielle'] },
+  it: { categories: ['Tutti','Architettura','Interni','Ristrutturazione'], filter: 'Filtra i progetti', titles: ['Pranzo & luce','Suite padronale','Materia & benessere','Arredi & ritmo','Colore & carattere','Materia & paesaggio'], types: ['Spazio residenziale','Interior design','Bagno residenziale','Design su misura','Soggiorno','Architettura residenziale'] },
+} as const;
+
+export default function ProjectGallery({ locale = 'es' }: { locale?: keyof typeof translations }) {
+  const copy = translations[locale];
   const [active, setActive] = useState<Category>('Todos');
   const visible = useMemo(
     () => active === 'Todos' ? projects : projects.filter((project) => project.category === active),
@@ -64,8 +72,8 @@ export default function ProjectGallery() {
 
   return (
     <div className="portfolio-interactive">
-      <div className="project-filters" aria-label="Filtrar selección de proyectos">
-        {categories.map((category) => (
+      <div className="project-filters" aria-label={copy.filter}>
+        {categories.map((category, index) => (
           <button
             key={category}
             type="button"
@@ -73,28 +81,30 @@ export default function ProjectGallery() {
             aria-pressed={active === category}
             onClick={() => setActive(category)}
           >
-            {category}
+            {copy.categories[index]}
           </button>
         ))}
       </div>
 
       <div className={`project-grid ${active !== 'Todos' ? 'project-grid--filtered' : ''}`} aria-live="polite">
-        {visible.map((project) => (
+        {visible.map((project) => {
+          const index = projects.indexOf(project);
+          return (
           <article className={`project-card project-card--${project.layout}`} key={project.id}>
             <div className="project-image-wrap">
-              <img src={project.image} alt={`${project.title}, proyecto de Raquel Hedo`} loading="lazy" />
+              <img src={project.image} alt={`${copy.titles[index]}, Raquel Hedo`} loading="lazy" />
               <span className="project-number">{project.id}</span>
               <span className="project-open" aria-hidden="true">↗</span>
             </div>
             <div className="project-meta">
               <div>
-                <p>{project.type}</p>
-                <h3>{project.title}</h3>
+                <p>{copy.types[index]}</p>
+                <h3>{copy.titles[index]}</h3>
               </div>
-              <span>{project.category}</span>
+              <span>{copy.categories[categories.indexOf(project.category)]}</span>
             </div>
-          </article>
-        ))}
+          </article>);
+        })}
       </div>
     </div>
   );

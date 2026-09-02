@@ -1,17 +1,27 @@
 ---
-interface Props { current?: 'estudio' | 'proyectos' | 'servicios' }
-const { current } = Astro.props;
+interface Props { current?: 'estudio' | 'proyectos' | 'servicios'; locale?: string; alternatePath?: string; alternates?: Record<string,string> }
+const { current, locale = 'es', alternatePath = '', alternates } = Astro.props;
+const prefixes: Record<string, string> = { es: '', en: '/en', fr: '/fr', it: '/it' };
+const base = prefixes[locale] ?? '';
+const labels: Record<string, string[]> = {
+  es: ['Estudio', 'Proyectos', 'Servicios', 'Hablemos', 'Abrir menú'],
+  en: ['Studio', 'Projects', 'Services', 'Let’s talk', 'Open menu'],
+  fr: ['Studio', 'Projets', 'Services', 'Parlons-nous', 'Ouvrir le menu'],
+  it: ['Studio', 'Progetti', 'Servizi', 'Parliamo', 'Apri il menu'],
+};
+const l = labels[locale] ?? labels.es;
 ---
 <header class="site-header">
-  <a class="brand" href="/#inicio" aria-label="Raquel Hedo, inicio">
+  <a class="brand" href={`${base}/#inicio`} aria-label="Raquel Hedo, inicio">
     <span class="brand-mark">RH</span>
     <span class="brand-copy"><strong>RAQUEL HEDO</strong><small>ARCHITECTURE & INTERIORS</small></span>
   </a>
-  <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" data-menu-button><span></span><span></span></button>
+  <button class="menu-button" type="button" aria-label={l[4]} aria-expanded="false" data-menu-button><span></span><span></span></button>
   <nav class="site-nav" aria-label="Navegación principal" data-menu>
-    <a class:list={{ active: current === 'estudio' }} href="/#estudio">Estudio</a>
-    <a class:list={{ active: current === 'proyectos' }} href="/#proyectos">Proyectos</a>
-    <a class:list={{ active: current === 'servicios' }} href="/#servicios">Servicios</a>
-    <a class="nav-contact" href="/#contacto">Hablemos <span>↗</span></a>
+    <a class:list={{ active: current === 'estudio' }} href={`${base}/#estudio`}>{l[0]}</a>
+    <a class:list={{ active: current === 'proyectos' }} href={`${base}/#proyectos`}>{l[1]}</a>
+    <a class:list={{ active: current === 'servicios' }} href={`${base}/#servicios`}>{l[2]}</a>
+    <div class="language-switcher" aria-label="Language"><button type="button">{locale.toUpperCase()}⌄</button><div>{Object.entries(prefixes).map(([code, prefix]) => <a class:list={{ active: code === locale }} href={alternates?.[code] ?? `${prefix}${alternatePath}`}>{code.toUpperCase()}</a>)}</div></div>
+    <a class="nav-contact" href={`${base}/#contacto`}>{l[3]} <span>↗</span></a>
   </nav>
 </header>
