@@ -1,13 +1,15 @@
 ---
 interface Props { current?: 'estudio' | 'proyectos' | 'servicios'; locale?: string; alternatePath?: string; alternates?: Record<string,string> }
 const { current, locale = 'es', alternatePath = '', alternates } = Astro.props;
-const prefixes: Record<string, string> = { es: '', en: '/en', fr: '/fr', it: '/it' };
+const prefixes: Record<string, string> = { es: '', en: '/en', fr: '/fr', it: '/it', de:'/de', pt:'/pt' };
 const base = prefixes[locale] ?? '';
 const labels: Record<string, string[]> = {
   es: ['Estudio', 'Proyectos', 'Servicios', 'Hablemos', 'Abrir menú', 'Contacto', 'FAQ'],
   en: ['Studio', 'Projects', 'Services', 'Let’s talk', 'Open menu', 'Contact', 'FAQ'],
   fr: ['Studio', 'Projets', 'Services', 'Parlons-nous', 'Ouvrir le menu', 'Contact', 'FAQ'],
   it: ['Studio', 'Progetti', 'Servizi', 'Parliamo', 'Apri il menu', 'Contatti', 'FAQ'],
+  de: ['Studio', 'Projekte', 'Leistungen', 'Sprechen wir', 'Menü öffnen', 'Kontakt', 'FAQ'],
+  pt: ['Estúdio', 'Projetos', 'Serviços', 'Vamos conversar', 'Abrir menu', 'Contacto', 'FAQ'],
 };
 const l = labels[locale] ?? labels.es;
 ---

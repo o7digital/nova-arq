@@ -1,9 +1,9 @@
 ---
 interface Props { locale?: string }
 const { locale = 'es' } = Astro.props;
-const prefixes: Record<string,string> = { es: '', en: '/en', fr: '/fr', it: '/it' };
+const prefixes: Record<string,string> = { es: '', en: '/en', fr: '/fr', it: '/it', de:'/de', pt:'/pt' };
 const base = prefixes[locale] ?? '';
-const labels: Record<string,string[]> = { es:['Estudio','Proyectos','Servicios','Hablemos','Ubicación','VOLVER ARRIBA'], en:['Studio','Projects','Services','Let’s talk','Location','BACK TO TOP'], fr:['Studio','Projets','Services','Parlons-nous','Localisation','RETOUR EN HAUT'], it:['Studio','Progetti','Servizi','Parliamo','Sede','TORNA SU'] };
+const labels: Record<string,string[]> = { es:['Estudio','Proyectos','Servicios','Hablemos','Ubicación','VOLVER ARRIBA'], en:['Studio','Projects','Services','Let’s talk','Location','BACK TO TOP'], fr:['Studio','Projets','Services','Parlons-nous','Localisation','RETOUR EN HAUT'], it:['Studio','Progetti','Servizi','Parliamo','Sede','TORNA SU'], de:['Studio','Projekte','Leistungen','Sprechen wir','Standort','NACH OBEN'], pt:['Estúdio','Projetos','Serviços','Vamos conversar','Localização','VOLTAR AO TOPO'] };
 const l = labels[locale] ?? labels.es;
 const privacy = locale === 'es' ? '/aviso-de-privacidad/' : `/${locale}/privacy/`;
 ---
@@ -16,5 +16,5 @@ const privacy = locale === 'es' ? '/aviso-de-privacidad/' : `/${locale}/privacy/
     <a href={`${base}/#estudio`}>{l[0]}</a><a href={`${base}/#proyectos`}>{l[1]}</a><a href={`${base}/#servicios`}>{l[2]}</a><a href={`${base}/#contacto`}>{l[3]}</a>
   </nav>
   <div class="footer-location"><span>{l[4]}</span><address>México · CDMX</address><p>Architecture · Interiors · Decoration</p></div>
-  <div class="footer-bottom"><span>© 2026 RAQUEL HEDO</span><a href={privacy}>{locale==='es'?'AVISO DE PRIVACIDAD':locale==='fr'?'CONFIDENTIALITÉ':locale==='it'?'PRIVACY':'PRIVACY NOTICE'}</a><a href="#top">{l[5]} ↑</a></div>
+  <div class="footer-bottom"><span>© 2026 RAQUEL HEDO</span><a href={privacy}>{locale==='es'?'AVISO DE PRIVACIDAD':locale==='fr'?'CONFIDENTIALITÉ':locale==='it'?'PRIVACY':locale==='de'?'DATENSCHUTZ':locale==='pt'?'PRIVACIDADE':'PRIVACY NOTICE'}</a><a href="#top">{l[5]} ↑</a></div>
 </footer>
