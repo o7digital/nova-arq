@@ -11,7 +11,6 @@ const projects = [
     images: [
       '/assets/raquel-projects/portfolio-dining-room.webp',
       '/assets/raquel-projects/hero-living-room.webp',
-      '/assets/raquel-projects/portfolio-bedroom.webp',
     ],
     layout: 'wide',
   },
@@ -22,8 +21,7 @@ const projects = [
     type: 'Interiorismo residencial',
     images: [
       '/assets/raquel-projects/portfolio-bedroom.webp',
-      '/assets/raquel-projects/hero-living-room.webp',
-      '/assets/raquel-projects/portfolio-dining-room.webp',
+      '/assets/raquel-projects/gallery/suite-bathroom.webp',
     ],
     layout: 'tall',
   },
@@ -45,7 +43,8 @@ const projects = [
     type: 'Diseño a medida',
     images: [
       '/assets/raquel-projects/portfolio-custom-divider.webp',
-      '/assets/raquel-projects/editorial-pool.webp',
+      '/assets/raquel-projects/gallery/custom-space-dining.webp',
+      '/assets/raquel-projects/gallery/custom-space-living.webp',
     ],
     layout: 'wide',
   },
