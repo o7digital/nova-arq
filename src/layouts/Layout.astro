@@ -116,6 +116,19 @@ const { title, description, lang = 'es' } = Astro.props;
       document.addEventListener('visibilitychange', () => document.hidden ? stopSlider() : startSlider());
       showSlide(0);
       startSlider();
+
+      const quoteSlides = [...document.querySelectorAll('.quote-slide')];
+      let activeQuoteSlide = 0;
+      const showQuoteSlide = (index) => {
+        activeQuoteSlide = (index + quoteSlides.length) % quoteSlides.length;
+        quoteSlides.forEach((slide, slideIndex) => {
+          slide.classList.toggle('is-active', slideIndex === activeQuoteSlide);
+        });
+      };
+      showQuoteSlide(0);
+      if (!reduceMotion && quoteSlides.length > 1) {
+        window.setInterval(() => showQuoteSlide(activeQuoteSlide + 1), 4000);
+      }
     </script>
   </body>
 </html>

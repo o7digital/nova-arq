@@ -24,8 +24,10 @@ const steps = [
   <main>
     <section class="hero" id="inicio">
       <div class="hero-image" data-hero-slider aria-label="Selección de proyectos de Raquel Hedo">
-        <img class="hero-slide is-active" src="/assets/raquel-projects/hero-dining.webp" alt="Comedor y sala residencial de doble altura" fetchpriority="high" />
-        <img class="hero-slide" src="/assets/raquel-projects/hero-staircase.webp" alt="Escalera residencial con barandal de cristal" />
+        <img class="hero-slide is-active" src="/assets/raquel-projects/hero-living-room.webp" alt="Sala residencial de doble altura" fetchpriority="high" />
+        <img class="hero-slide" src="/assets/raquel-projects/hero-exterior.webp" alt="Arquitectura residencial integrada al paisaje" />
+        <img class="hero-slide" src="/assets/raquel-projects/hero-open-plan.webp" alt="Área social abierta con comedor, sala y cocina" />
+        <img class="hero-slide" src="/assets/raquel-projects/hero-bathroom.webp" alt="Baño residencial con materiales naturales" />
       </div>
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-grid" aria-hidden="true"></div>
@@ -47,6 +49,8 @@ const steps = [
         <div class="hero-slider-dots" role="group" aria-label="Elegir imagen">
           <button class="is-active" type="button" data-slider-dot="0" aria-label="Mostrar imagen 1" aria-pressed="true"></button>
           <button type="button" data-slider-dot="1" aria-label="Mostrar imagen 2" aria-pressed="false"></button>
+          <button type="button" data-slider-dot="2" aria-label="Mostrar imagen 3" aria-pressed="false"></button>
+          <button type="button" data-slider-dot="3" aria-label="Mostrar imagen 4" aria-pressed="false"></button>
         </div>
         <button type="button" data-slider-next aria-label="Imagen siguiente">→</button>
       </div>
@@ -77,7 +81,10 @@ const steps = [
     </section>
 
     <section class="quote-section">
-      <div class="quote-image" aria-hidden="true"></div>
+      <div class="quote-image" data-quote-slider aria-hidden="true">
+        <img class="quote-slide is-active" src="/assets/raquel-projects/hero-dining.webp" alt="" loading="lazy" />
+        <img class="quote-slide" src="/assets/raquel-projects/hero-staircase.webp" alt="" loading="lazy" />
+      </div>
       <div class="quote-overlay" aria-hidden="true"></div>
       <div class="quote-content" data-reveal>
         <p>Arquitectura e interiorismo concebidos como una experiencia integral.</p>
