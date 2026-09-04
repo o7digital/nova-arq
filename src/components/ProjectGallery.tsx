@@ -22,17 +22,24 @@ const projects = [
     images: [
       '/assets/raquel-projects/portfolio-bedroom.webp',
       '/assets/raquel-projects/gallery/suite-bathroom.webp',
+      '/assets/raquel-projects/portfolio-bathroom.webp',
+      '/assets/raquel-projects/gallery/bathroom-detail.webp',
     ],
     layout: 'tall',
   },
   {
     id: '03',
     category: 'Remodelación',
-    title: 'Materia & bienestar',
-    type: 'Baño residencial',
+    title: 'Club de Empresarios',
+    type: 'Club privado',
     images: [
-      '/assets/raquel-projects/portfolio-bathroom.webp',
-      '/assets/raquel-projects/gallery/bathroom-detail.webp',
+      '/assets/raquel-projects/gallery/club-lounge.webp',
+      '/assets/raquel-projects/gallery/club-restaurant.webp',
+      '/assets/raquel-projects/gallery/club-staircase.webp',
+      '/assets/raquel-projects/gallery/club-dining.webp',
+      '/assets/raquel-projects/gallery/club-gym.webp',
+      '/assets/raquel-projects/gallery/club-lockers.webp',
+      '/assets/raquel-projects/gallery/club-entrance.webp',
     ],
     layout: 'square',
   },
@@ -78,12 +85,12 @@ const projects = [
 const categories: Category[] = ['Todos', 'Arquitectura', 'Interiores', 'Remodelación'];
 
 const translations = {
-  es: { categories: ['Todos','Arquitectura','Interiores','Remodelación'], filter: 'Filtrar selección de proyectos', titles: ['Comedor & luz','Suite principal','Materia & bienestar','Mobiliario & ritmo','Color & carácter','Materia & paisaje'], types: ['Espacio residencial','Interiorismo residencial','Baño residencial','Diseño a medida','Sala de estar','Arquitectura residencial'], previous: 'Foto anterior', next: 'Foto siguiente' },
-  en: { categories: ['All','Architecture','Interiors','Renovation'], filter: 'Filter selected projects', titles: ['Dining & light','Primary suite','Material & wellbeing','Furniture & rhythm','Colour & character','Material & landscape'], types: ['Residential space','Residential interiors','Residential bathroom','Bespoke design','Living room','Residential architecture'], previous: 'Previous photo', next: 'Next photo' },
-  fr: { categories: ['Tous','Architecture','Intérieurs','Rénovation'], filter: 'Filtrer les projets', titles: ['Salle à manger & lumière','Suite principale','Matière & bien-être','Mobilier & rythme','Couleur & caractère','Matière & paysage'], types: ['Espace résidentiel','Architecture intérieure','Salle de bains','Création sur mesure','Salon','Architecture résidentielle'], previous: 'Photo précédente', next: 'Photo suivante' },
-  it: { categories: ['Tutti','Architettura','Interni','Ristrutturazione'], filter: 'Filtra i progetti', titles: ['Pranzo & luce','Suite padronale','Materia & benessere','Arredi & ritmo','Colore & carattere','Materia & paesaggio'], types: ['Spazio residenziale','Interior design','Bagno residenziale','Design su misura','Soggiorno','Architettura residenziale'], previous: 'Foto precedente', next: 'Foto successiva' },
-  de: { categories: ['Alle','Architektur','Interieur','Sanierung'], filter: 'Projekte filtern', titles: ['Esszimmer & Licht','Master Suite','Material & Wohlbefinden','Möbel & Rhythmus','Farbe & Charakter','Material & Landschaft'], types: ['Wohnraum','Wohninterieur','Badezimmer','Maßanfertigung','Wohnzimmer','Wohnarchitektur'], previous: 'Vorheriges Foto', next: 'Nächstes Foto' },
-  pt: { categories: ['Todos','Arquitetura','Interiores','Remodelação'], filter: 'Filtrar projetos', titles: ['Sala de jantar & luz','Suíte principal','Matéria & bem-estar','Mobiliário & ritmo','Cor & caráter','Matéria & paisagem'], types: ['Espaço residencial','Interiores residenciais','Casa de banho','Design sob medida','Sala de estar','Arquitetura residencial'], previous: 'Foto anterior', next: 'Foto seguinte' },
+  es: { categories: ['Todos','Arquitectura','Interiores','Remodelación'], filter: 'Filtrar selección de proyectos', titles: ['Comedor & luz','Suite principal','Club de Empresarios','Mobiliario & ritmo','Color & carácter','Materia & paisaje'], types: ['Espacio residencial','Interiorismo residencial','Club privado','Diseño a medida','Sala de estar','Arquitectura residencial'], previous: 'Foto anterior', next: 'Foto siguiente' },
+  en: { categories: ['All','Architecture','Interiors','Renovation'], filter: 'Filter selected projects', titles: ['Dining & light','Primary suite','Club de Empresarios','Furniture & rhythm','Colour & character','Material & landscape'], types: ['Residential space','Residential interiors','Private club','Bespoke design','Living room','Residential architecture'], previous: 'Previous photo', next: 'Next photo' },
+  fr: { categories: ['Tous','Architecture','Intérieurs','Rénovation'], filter: 'Filtrer les projets', titles: ['Salle à manger & lumière','Suite principale','Club de Empresarios','Mobilier & rythme','Couleur & caractère','Matière & paysage'], types: ['Espace résidentiel','Architecture intérieure','Club privé','Création sur mesure','Salon','Architecture résidentielle'], previous: 'Photo précédente', next: 'Photo suivante' },
+  it: { categories: ['Tutti','Architettura','Interni','Ristrutturazione'], filter: 'Filtra i progetti', titles: ['Pranzo & luce','Suite padronale','Club de Empresarios','Arredi & ritmo','Colore & carattere','Materia & paesaggio'], types: ['Spazio residenziale','Interior design','Club privato','Design su misura','Soggiorno','Architettura residenziale'], previous: 'Foto precedente', next: 'Foto successiva' },
+  de: { categories: ['Alle','Architektur','Interieur','Sanierung'], filter: 'Projekte filtern', titles: ['Esszimmer & Licht','Master Suite','Club de Empresarios','Möbel & Rhythmus','Farbe & Charakter','Material & Landschaft'], types: ['Wohnraum','Wohninterieur','Privatclub','Maßanfertigung','Wohnzimmer','Wohnarchitektur'], previous: 'Vorheriges Foto', next: 'Nächstes Foto' },
+  pt: { categories: ['Todos','Arquitetura','Interiores','Remodelação'], filter: 'Filtrar projetos', titles: ['Sala de jantar & luz','Suíte principal','Club de Empresarios','Mobiliário & ritmo','Cor & caráter','Matéria & paisagem'], types: ['Espaço residencial','Interiores residenciais','Clube privado','Design sob medida','Sala de estar','Arquitetura residencial'], previous: 'Foto anterior', next: 'Foto seguinte' },
 } as const;
 
 type Project = (typeof projects)[number];
