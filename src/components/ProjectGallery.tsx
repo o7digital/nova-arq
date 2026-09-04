@@ -51,7 +51,7 @@ const projects = [
     images: [
       '/assets/raquel-projects/portfolio-custom-divider.webp',
       '/assets/raquel-projects/gallery/custom-space-dining.webp',
-      '/assets/raquel-projects/gallery/custom-space-living.webp',
+      '/assets/raquel-projects/gallery/custom-space-sofa-cropped.webp',
     ],
     layout: 'wide',
   },
