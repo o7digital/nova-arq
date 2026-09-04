@@ -151,13 +151,145 @@ const renovationFeatures = {
   },
 } as const;
 
+const interiorFeatures = {
+  es: {
+    '04': {
+      eyebrow: 'Interiorismo y mobiliario a medida en Ciudad de México',
+      title: 'Diseño que ordena el espacio hasta el último detalle.',
+      paragraphs: [
+        'El estudio Raquel Hedo diseña interiores donde arquitectura y mobiliario se resuelven como un solo conjunto. Cada proporción, recorrido y pieza responde a la forma de vivir de sus habitantes.',
+        'Cocinas, libreros, divisores, carpinterías y muebles a medida se desarrollan junto con materiales e iluminación para aprovechar el espacio y conseguir ambientes funcionales, serenos y duraderos.',
+      ],
+      link: 'Descubrir interiorismo y decoración',
+    },
+    '05': {
+      eyebrow: 'Decoración residencial y diseño de interiores',
+      title: 'Color, arte y materia para espacios con carácter.',
+      paragraphs: [
+        'Raquel Hedo transforma salas y áreas sociales mediante una composición sensible de color, texturas, arte, luz y mobiliario. El objetivo es crear interiores personales que se sientan vivos y coherentes.',
+        'La selección de acabados, textiles, objetos y piezas especiales se integra a la arquitectura para dar identidad a cada vivienda, desde el concepto inicial hasta la instalación final.',
+      ],
+      link: 'Conocer nuestro enfoque de interiores',
+    },
+  },
+  en: {
+    '04': {
+      eyebrow: 'Interior design and bespoke furniture in Mexico City',
+      title: 'Design that brings order to every last detail.',
+      paragraphs: [
+        'Raquel Hedo Studio creates interiors where architecture and furniture are conceived as one. Every proportion, route and piece responds to the way its residents live.',
+        'Kitchens, bookcases, partitions, joinery and bespoke furniture are developed alongside materials and lighting to make better use of space and create functional, calm and enduring rooms.',
+      ],
+      link: 'Explore interiors and decoration',
+    },
+    '05': {
+      eyebrow: 'Residential decoration and interior design',
+      title: 'Colour, art and material for interiors with character.',
+      paragraphs: [
+        'Raquel Hedo transforms living rooms and social spaces through a sensitive composition of colour, texture, art, light and furniture. The aim is to create personal interiors that feel alive and coherent.',
+        'Finishes, textiles, objects and distinctive pieces are integrated with the architecture to give each home its own identity, from the first concept through to final installation.',
+      ],
+      link: 'Discover our approach to interiors',
+    },
+  },
+  fr: {
+    '04': {
+      eyebrow: 'Architecture intérieure et mobilier sur mesure à Mexico',
+      title: 'Un design qui organise l’espace jusque dans les moindres détails.',
+      paragraphs: [
+        'Le studio Raquel Hedo conçoit des intérieurs où architecture et mobilier forment un seul ensemble. Chaque proportion, circulation et pièce répond à la manière de vivre de ses habitants.',
+        'Cuisines, bibliothèques, cloisons, menuiseries et meubles sur mesure sont dessinés avec les matières et la lumière afin d’optimiser l’espace et de créer des lieux fonctionnels, calmes et durables.',
+      ],
+      link: 'Découvrir les intérieurs et la décoration',
+    },
+    '05': {
+      eyebrow: 'Décoration résidentielle et architecture intérieure',
+      title: 'Couleur, art et matière pour des intérieurs de caractère.',
+      paragraphs: [
+        'Raquel Hedo transforme salons et espaces de réception par une composition sensible de couleurs, textures, art, lumière et mobilier. L’objectif est de créer des intérieurs personnels, vivants et cohérents.',
+        'Finitions, textiles, objets et pièces singulières s’intègrent à l’architecture pour donner une identité à chaque logement, du premier concept à l’installation finale.',
+      ],
+      link: 'Découvrir notre approche des intérieurs',
+    },
+  },
+  it: {
+    '04': {
+      eyebrow: 'Interior design e arredi su misura a Città del Messico',
+      title: 'Un progetto che ordina lo spazio fino all’ultimo dettaglio.',
+      paragraphs: [
+        'Lo studio Raquel Hedo crea interni in cui architettura e arredi sono pensati come un unico insieme. Ogni proporzione, percorso e pezzo risponde al modo di vivere di chi abita lo spazio.',
+        'Cucine, librerie, divisori, falegnameria e mobili su misura sono sviluppati insieme a materiali e illuminazione per valorizzare lo spazio e creare ambienti funzionali, sereni e durevoli.',
+      ],
+      link: 'Scopri interior design e decorazione',
+    },
+    '05': {
+      eyebrow: 'Decorazione residenziale e interior design',
+      title: 'Colore, arte e materia per interni di carattere.',
+      paragraphs: [
+        'Raquel Hedo trasforma soggiorni e spazi sociali attraverso una composizione sensibile di colore, texture, arte, luce e arredi. L’obiettivo è creare interni personali, vivi e coerenti.',
+        'Finiture, tessuti, oggetti e pezzi speciali si integrano con l’architettura per dare identità a ogni casa, dal concept iniziale fino all’installazione finale.',
+      ],
+      link: 'Scopri il nostro approccio agli interni',
+    },
+  },
+  de: {
+    '04': {
+      eyebrow: 'Innenarchitektur und Maßmöbel in Mexiko-Stadt',
+      title: 'Design, das den Raum bis ins letzte Detail ordnet.',
+      paragraphs: [
+        'Das Studio Raquel Hedo gestaltet Innenräume, in denen Architektur und Möbel als Einheit gedacht werden. Jede Proportion, Bewegung und Anfertigung folgt der Lebensweise der Bewohner.',
+        'Küchen, Regale, Raumteiler, Einbauten und Maßmöbel entstehen gemeinsam mit Material- und Lichtkonzepten, um den Raum optimal zu nutzen und funktionale, ruhige und langlebige Orte zu schaffen.',
+      ],
+      link: 'Interieur und Dekoration entdecken',
+    },
+    '05': {
+      eyebrow: 'Wohndekoration und Innenarchitektur',
+      title: 'Farbe, Kunst und Material für Räume mit Charakter.',
+      paragraphs: [
+        'Raquel Hedo verwandelt Wohn- und Gesellschaftsräume durch ein sensibles Zusammenspiel von Farbe, Textur, Kunst, Licht und Möbeln. So entstehen persönliche Interieurs, die lebendig und stimmig wirken.',
+        'Oberflächen, Textilien, Objekte und besondere Einzelstücke verbinden sich mit der Architektur und verleihen jedem Zuhause eine eigene Identität – vom ersten Konzept bis zur finalen Einrichtung.',
+      ],
+      link: 'Unseren Interieuransatz entdecken',
+    },
+  },
+  pt: {
+    '04': {
+      eyebrow: 'Interiores e mobiliário sob medida na Cidade do México',
+      title: 'Design que organiza o espaço até ao último detalhe.',
+      paragraphs: [
+        'O estúdio Raquel Hedo cria interiores onde arquitetura e mobiliário são pensados como um único conjunto. Cada proporção, percurso e peça responde à forma de viver dos seus habitantes.',
+        'Cozinhas, estantes, divisórias, carpintarias e móveis sob medida são desenvolvidos com materiais e iluminação para aproveitar o espaço e criar ambientes funcionais, serenos e duradouros.',
+      ],
+      link: 'Conhecer interiores e decoração',
+    },
+    '05': {
+      eyebrow: 'Decoração residencial e design de interiores',
+      title: 'Cor, arte e matéria para interiores com caráter.',
+      paragraphs: [
+        'Raquel Hedo transforma salas e áreas sociais através de uma composição sensível de cor, texturas, arte, luz e mobiliário. O objetivo é criar interiores pessoais, vivos e coerentes.',
+        'Acabamentos, têxteis, objetos e peças especiais integram-se na arquitetura para dar identidade a cada casa, desde o conceito inicial até à instalação final.',
+      ],
+      link: 'Conhecer a nossa abordagem de interiores',
+    },
+  },
+} as const;
+
 type Project = (typeof projects)[number];
 type Copy = (typeof translations)[keyof typeof translations];
 type RenovationCopy = (typeof renovationFeatures)[keyof typeof renovationFeatures];
+type InteriorCopy = (typeof interiorFeatures)[keyof typeof interiorFeatures];
 
-function ProjectCard({ project, index, copy, renovation }: { project: Project; index: number; copy: Copy; renovation: RenovationCopy }) {
+function ProjectCard({ project, index, copy, renovation, interiors }: { project: Project; index: number; copy: Copy; renovation: RenovationCopy; interiors: InteriorCopy }) {
   const [current, setCurrent] = useState(0);
-  const editorial = project.id === '03' ? renovation : project.id === '06' ? copy.feature : null;
+  const editorial = project.id === '03'
+    ? renovation
+    : project.id === '04'
+      ? interiors['04']
+      : project.id === '05'
+        ? interiors['05']
+        : project.id === '06'
+          ? copy.feature
+          : null;
   const move = (direction: -1 | 1) => {
     setCurrent((photo) => (photo + direction + project.images.length) % project.images.length);
   };
@@ -249,7 +381,7 @@ export default function ProjectGallery({ locale = 'es' }: { locale?: keyof typeo
 
       <div className={`project-grid ${active !== 'Todos' ? 'project-grid--filtered' : ''}`} aria-live="polite">
         {visible.map((project) => (
-          <ProjectCard key={project.id} project={project} index={projects.indexOf(project)} copy={copy} renovation={renovationFeatures[locale]} />
+          <ProjectCard key={project.id} project={project} index={projects.indexOf(project)} copy={copy} renovation={renovationFeatures[locale]} interiors={interiorFeatures[locale]} />
         ))}
       </div>
     </div>
