@@ -18,14 +18,12 @@ const servicePath = localeConfig[locale].servicesPath;
   <main>
     <section class="hero" id="inicio">
       <div class="hero-image" data-hero-slider aria-label="Raquel Hedo projects">
-        <img class="hero-slide is-active" src="/assets/raquel-projects/hero-living-room.webp" alt="Double-height living room" fetchpriority="high" />
-        <img class="hero-slide" src="/assets/raquel-projects/hero-exterior.webp" alt="Residential architecture in the landscape" />
-        <img class="hero-slide" src="/assets/raquel-projects/hero-open-plan.webp" alt="Open-plan interior" />
-        <img class="hero-slide" src="/assets/raquel-projects/hero-bathroom.webp" alt="Bathroom in natural materials" />
+        <img class="hero-slide is-active" src="/assets/raquel-projects/hero-dining.webp" alt="Double-height residential dining and living room" fetchpriority="high" />
+        <img class="hero-slide" src="/assets/raquel-projects/hero-staircase.webp" alt="Residential staircase with glass balustrade" />
       </div><div class="hero-shade"></div><div class="hero-grid"></div>
       <div class="hero-content"><p class="eyebrow hero-eyebrow"><span></span>{t.heroEye}</p><h1>{t.heroTitle}<br/><em>{t.heroEm}</em></h1><p class="hero-intro">{t.heroIntro}</p><div class="hero-actions"><a class="button button--light" href="#proyectos">{t.discover}<span>→</span></a><a class="text-link text-link--light" href="#estudio">{t.know}<span>↗</span></a></div></div>
       <div class="hero-signature"><span>{t.since}</span><span>Architecture & Interiors</span></div>
-      <div class="hero-slider-controls"><button type="button" data-slider-previous aria-label="Previous">←</button><div class="hero-slider-dots">{[0,1,2,3].map((n)=><button class:list={{'is-active':n===0}} type="button" data-slider-dot={n} aria-label={`Image ${n+1}`}></button>)}</div><button type="button" data-slider-next aria-label="Next">→</button></div>
+      <div class="hero-slider-controls"><button type="button" data-slider-previous aria-label="Previous">←</button><div class="hero-slider-dots">{[0,1].map((n)=><button class:list={{'is-active':n===0}} type="button" data-slider-dot={n} aria-label={`Image ${n+1}`}></button>)}</div><button type="button" data-slider-next aria-label="Next">→</button></div>
     </section>
     <section class="manifesto section-pad" id="estudio"><div class="manifesto-index">01 / 05</div><div class="manifesto-copy" data-reveal><p class="eyebrow"><span></span>{t.visionEye}</p><h2>{t.visionTitle}</h2><div class="manifesto-columns"><p class="lead">{t.visionLead}</p><p>{t.visionText}</p></div></div></section>
     <section class="portfolio section-pad" id="proyectos"><div class="section-heading" data-reveal><div><p class="eyebrow"><span></span>{t.workEye}</p><h2>{t.workTitle}</h2></div><p>{t.workText}</p></div><ProjectGallery client:load locale={locale}/></section>
