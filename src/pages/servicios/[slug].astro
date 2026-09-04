@@ -4,6 +4,8 @@ import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import { services } from '../../data/services';
 import { getLocalizedServices, localeConfig, type Locale } from '../../data/i18n';
+import { serviceStructuredData } from '../../data/seo';
+import { getImageDimensions } from '../../data/imageDimensions';
 
 export function getStaticPaths() {
   return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
@@ -13,13 +15,16 @@ const { service } = Astro.props;
 const index = services.findIndex((item) => item.slug === service.slug);
 const next = services[(index + 1) % services.length];
 const alternates = { es:`/servicios/${service.slug}/`, ...Object.fromEntries(Object.keys(localeConfig).map((key)=>{ const code=key as Locale; const config=localeConfig[code]; return [code,`/${code}/${config.servicesPath}/${getLocalizedServices(code)[index].slug}/`]; })) };
+const heroDimensions = getImageDimensions(service.hero);
+const detailDimensions = getImageDimensions(service.detailImage);
+const galleryDimensions = getImageDimensions(service.galleryImage);
 ---
-<Layout title={`${service.title} | Raquel Hedo`} description={service.intro}>
+<Layout title={`${service.title} | Raquel Hedo`} description={service.intro} alternates={alternates} structuredData={serviceStructuredData(service.title, service.intro, `/servicios/${service.slug}/`)}>
   <div id="top"></div>
   <SiteHeader current="servicios" alternates={alternates} />
   <main class="service-page">
     <section class="service-hero">
-      <img src={service.hero} alt={service.title} fetchpriority="high" />
+      <img src={service.hero} alt={service.title} width={heroDimensions.width} height={heroDimensions.height} fetchpriority="high" decoding="async" />
       <div class="service-hero-overlay" aria-hidden="true"></div>
       <div class="service-hero-content">
         <a class="service-back" href="/#servicios">← Todos los servicios</a>
@@ -39,7 +44,7 @@ const alternates = { es:`/servicios/${service.slug}/`, ...Object.fromEntries(Obj
     </section>
 
     <section class="service-approach">
-      <div class="service-approach-image"><img src={service.detailImage} alt={`Detalle de ${service.title}`} loading="lazy" /></div>
+      <div class="service-approach-image"><img src={service.detailImage} alt={`Detalle de ${service.title}`} width={detailDimensions.width} height={detailDimensions.height} loading="lazy" decoding="async" /></div>
       <div class="service-approach-copy">
         <p class="eyebrow"><span></span> Alcance integral</p>
         <h2>De la intención<br />a la materia.</h2>
@@ -55,7 +60,7 @@ const alternates = { es:`/servicios/${service.slug}/`, ...Object.fromEntries(Obj
       </div>
     </section>
 
-    <section class="service-image-break"><img src={service.galleryImage} alt={`Atmósfera de ${service.title}`} loading="lazy" /><p>Diseño que permanece.<br />Espacios que se viven.</p></section>
+    <section class="service-image-break"><img src={service.galleryImage} alt={`Atmósfera de ${service.title}`} width={galleryDimensions.width} height={galleryDimensions.height} loading="lazy" decoding="async" /><p>Diseño que permanece.<br />Espacios que se viven.</p></section>
 
     <section class="service-next section-pad">
       <div><p class="eyebrow"><span></span> Siguiente disciplina</p><a href={`/servicios/${next.slug}/`}><span>{next.number}</span><h2>{next.title}</h2><b>→</b></a></div>

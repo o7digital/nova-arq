@@ -6,6 +6,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import { services } from '../data/services';
 import ContactForm from '../components/ContactForm.astro';
 import FaqSection from '../components/FaqSection.astro';
+import { homeAlternates } from '../data/seo';
 
 const steps = [
   { number: 'I', title: 'Escuchar', text: 'Entender la vida, las necesidades y la ambición detrás de cada espacio.' },
@@ -18,16 +19,17 @@ const steps = [
 <Layout
   title="Raquel Hedo | Arquitectura & Interiorismo"
   description="Raquel Hedo crea proyectos de arquitectura residencial, interiorismo, decoración y remodelación integral con una visión personal, técnica y atemporal."
+  alternates={homeAlternates}
 >
   <SiteHeader />
 
   <main>
     <section class="hero" id="inicio">
       <div class="hero-image" data-hero-slider aria-label="Selección de proyectos de Raquel Hedo">
-        <img class="hero-slide is-active" src="/assets/raquel-projects/hero-living-room.webp" alt="Sala residencial de doble altura" fetchpriority="high" />
-        <img class="hero-slide" src="/assets/raquel-projects/hero-exterior.webp" alt="Arquitectura residencial integrada al paisaje" />
-        <img class="hero-slide" src="/assets/raquel-projects/hero-open-plan.webp" alt="Área social abierta con comedor, sala y cocina" />
-        <img class="hero-slide" src="/assets/raquel-projects/hero-bathroom.webp" alt="Baño residencial con materiales naturales" />
+        <img class="hero-slide is-active" src="/assets/raquel-projects/hero-living-room.webp" alt="Sala residencial de doble altura" width="1095" height="771" fetchpriority="high" decoding="async" />
+        <img class="hero-slide" src="/assets/raquel-projects/hero-exterior.webp" alt="Arquitectura residencial integrada al paisaje" width="1280" height="960" loading="lazy" fetchpriority="low" decoding="async" />
+        <img class="hero-slide" src="/assets/raquel-projects/hero-open-plan.webp" alt="Área social abierta con comedor, sala y cocina" width="1280" height="828" loading="lazy" fetchpriority="low" decoding="async" />
+        <img class="hero-slide" src="/assets/raquel-projects/hero-bathroom.webp" alt="Baño residencial con materiales naturales" width="1192" height="853" loading="lazy" fetchpriority="low" decoding="async" />
       </div>
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-grid" aria-hidden="true"></div>
@@ -77,13 +79,13 @@ const steps = [
         </div>
         <p>Arquitectura residencial, interiorismo y remodelaciones integrales concebidas por el estudio Raquel Hedo en Ciudad de México.</p>
       </div>
-      <ProjectGallery client:load />
+      <ProjectGallery client:visible />
     </section>
 
     <section class="quote-section">
       <div class="quote-image" data-quote-slider aria-hidden="true">
-        <img class="quote-slide is-active" src="/assets/raquel-projects/hero-dining.webp" alt="" loading="lazy" />
-        <img class="quote-slide" src="/assets/raquel-projects/hero-staircase.webp" alt="" loading="lazy" />
+        <img class="quote-slide is-active" src="/assets/raquel-projects/hero-dining.webp" alt="" width="1170" height="774" loading="lazy" decoding="async" />
+        <img class="quote-slide" src="/assets/raquel-projects/hero-staircase.webp" alt="" width="1036" height="762" loading="lazy" decoding="async" />
       </div>
       <div class="quote-overlay" aria-hidden="true"></div>
       <div class="quote-content" data-reveal>
@@ -132,7 +134,7 @@ const steps = [
     <section class="profile section-pad">
       <div class="profile-visual" data-reveal>
         <div class="portrait-frame">
-          <img src="/assets/portrait/raquel-hedo.webp" alt="Raquel Hedo, arquitecta y decoradora" loading="lazy" />
+          <img src="/assets/portrait/raquel-hedo.webp" alt="Raquel Hedo, arquitecta y decoradora" width="699" height="1280" loading="lazy" decoding="async" />
         </div>
         <div class="profile-years"><strong>≈25</strong><span>años creando<br />espacios con identidad</span></div>
       </div>

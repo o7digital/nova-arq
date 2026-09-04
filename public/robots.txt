@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://raquel-hedo.vercel.app/sitemap-index.xml

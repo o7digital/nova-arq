@@ -1,14 +1,69 @@
 ---
 import '../styles/global.css';
+import '@fontsource/dm-sans/300.css';
+import '@fontsource/dm-sans/400.css';
+import '@fontsource/dm-sans/500.css';
+import '@fontsource/dm-sans/600.css';
+import '@fontsource/italiana/400.css';
 import OliviaAI from '../components/OliviaAI.astro';
 
 interface Props {
   title: string;
   description: string;
   lang?: string;
+  alternates?: Record<string, string>;
+  image?: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description, lang = 'es' } = Astro.props;
+const {
+  title,
+  description,
+  lang = 'es',
+  alternates,
+  image = '/assets/raquel-projects/hero-living-room.webp',
+  structuredData,
+} = Astro.props;
+const siteUrl = Astro.site ?? new URL('https://raquel-hedo.vercel.app');
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const socialImageUrl = new URL(image, siteUrl).href;
+const localeCodes: Record<string, string> = { es: 'es_MX', en: 'en_US', fr: 'fr_FR', it: 'it_IT', de: 'de_DE', pt: 'pt_PT' };
+const alternateLinks = Object.entries(alternates ?? {}).map(([code, path]) => ({ code, href: new URL(path, siteUrl).href }));
+const xDefaultUrl = alternateLinks.find(({ code }) => code === 'es')?.href ?? canonicalUrl;
+const extraSchemas = structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [];
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': new URL('/#website', siteUrl).href,
+    url: new URL('/', siteUrl).href,
+    name: 'Raquel Hedo',
+    description: 'Estudio de arquitectura, interiorismo, decoración y remodelación integral en Ciudad de México.',
+    inLanguage: ['es', 'en', 'fr', 'it', 'de', 'pt'],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    '@id': new URL('/#studio', siteUrl).href,
+    name: 'Raquel Hedo Architecture & Interiors',
+    url: new URL('/', siteUrl).href,
+    image: socialImageUrl,
+    description: 'Estudio de arquitectura residencial, interiorismo, decoración, remodelación integral y dirección de obra.',
+    address: { '@type': 'PostalAddress', addressLocality: 'Ciudad de México', addressCountry: 'MX' },
+    areaServed: [{ '@type': 'Country', name: 'México' }, { '@type': 'Place', name: 'International' }],
+    founder: { '@id': new URL('/#raquel-hedo', siteUrl).href },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': new URL('/#raquel-hedo', siteUrl).href,
+    name: 'Raquel Hedo',
+    jobTitle: ['Arquitecta', 'Diseñadora de interiores'],
+    worksFor: { '@id': new URL('/#studio', siteUrl).href },
+  },
+  ...extraSchemas,
+];
+const serializedSchemas = JSON.stringify(schemas).replace(/</g, '\\u003c');
 ---
 
 <!doctype html>
@@ -17,19 +72,27 @@ const { title, description, lang = 'es' } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#171712" />
+    <link rel="canonical" href={canonicalUrl} />
+    {alternateLinks.map(({ code, href }) => <link rel="alternate" hreflang={code} href={href} />)}
+    {alternateLinks.length > 0 && <link rel="alternate" hreflang="x-default" href={xDefaultUrl} />}
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale" content={localeCodes[lang] ?? 'es_MX'} />
+    <meta property="og:site_name" content="Raquel Hedo Architecture & Interiors" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/assets/raquel-projects/hero-living-room.webp" />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content="1095" />
+    <meta property="og:image:height" content="771" />
+    <meta property="og:image:alt" content="Raquel Hedo Architecture & Interiors" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <script is:inline type="application/ld+json" set:html={serializedSchemas}></script>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Italiana&display=swap"
-      rel="stylesheet"
-    />
     <title>{title}</title>
   </head>
   <body>

@@ -1,6 +1,6 @@
 ---
-import Layout from '../../layouts/Layout.astro'; import PrivacyPage from '../../components/PrivacyPage.astro';
+import Layout from '../../layouts/Layout.astro'; import PrivacyPage from '../../components/PrivacyPage.astro'; import { privacyAlternates } from '../../data/seo';
 export function getStaticPaths(){return ['en','fr','it','de','pt'].map(lang=>({params:{lang},props:{locale:lang}}));} const locale=Astro.props.locale as 'en'|'fr'|'it'|'de'|'pt';
 const titles={en:'Privacy notice',fr:'Politique de confidentialité',it:'Informativa sulla privacy',de:'Datenschutzerklärung',pt:'Política de privacidade'};
 ---
-<Layout title={`${titles[locale]} | Raquel Hedo`} description={titles[locale]} lang={locale}><PrivacyPage locale={locale}/></Layout>
+<Layout title={`${titles[locale]} | Raquel Hedo`} description={titles[locale]} lang={locale} alternates={privacyAlternates}><PrivacyPage locale={locale}/></Layout>

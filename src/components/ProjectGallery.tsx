@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { getImageDimensions } from '../data/imageDimensions';
 
 type Category = 'Todos' | 'Arquitectura' | 'Interiores' | 'Remodelación';
 
@@ -308,16 +309,22 @@ function ProjectCard({ project, index, copy, renovation, interiors }: { project:
         aria-roledescription="carousel"
         aria-label={copy.titles[index]}
       >
-        {project.images.map((image, photo) => (
-          <img
-            key={image}
-            className={`project-slide ${photo === current ? 'is-active' : ''}`}
-            src={image}
-            alt={`${copy.titles[index]}, ${photo + 1} / ${project.images.length}`}
-            loading="lazy"
-            aria-hidden={photo !== current}
-          />
-        ))}
+        {project.images.map((image, photo) => {
+          const { width, height } = getImageDimensions(image);
+          return (
+            <img
+              key={image}
+              className={`project-slide ${photo === current ? 'is-active' : ''}`}
+              src={image}
+              alt={`${copy.titles[index]}, ${photo + 1} / ${project.images.length}`}
+              width={width}
+              height={height}
+              loading="lazy"
+              decoding="async"
+              aria-hidden={photo !== current}
+            />
+          );
+        })}
         <span className="project-number">{project.id}</span>
         <div className="project-slider-controls">
           <button type="button" onClick={() => move(-1)} aria-label={copy.previous}>←</button>

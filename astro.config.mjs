@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  integrations: [react()],
+  site: 'https://raquel-hedo.vercel.app',
+  integrations: [react(), sitemap()],
   output: 'static',
 });

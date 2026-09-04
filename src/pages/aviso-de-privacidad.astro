@@ -1,4 +1,4 @@
 ---
-import Layout from '../layouts/Layout.astro'; import PrivacyPage from '../components/PrivacyPage.astro';
+import Layout from '../layouts/Layout.astro'; import PrivacyPage from '../components/PrivacyPage.astro'; import { privacyAlternates } from '../data/seo';
 ---
-<Layout title="Aviso de privacidad | Raquel Hedo" description="Aviso de privacidad, protección de datos y cookies de Raquel Hedo."><PrivacyPage locale="es"/></Layout>
+<Layout title="Aviso de privacidad | Raquel Hedo" description="Aviso de privacidad, protección de datos y cookies de Raquel Hedo." alternates={privacyAlternates}><PrivacyPage locale="es"/></Layout>
