@@ -73,7 +73,9 @@ const projects = [
     type: 'Arquitectura e interiorismo',
     images: [
       '/assets/raquel-projects/gallery/projects-red-corridor.webp',
-      '/assets/raquel-projects/gallery/projects-white-staircase.webp',
+      '/assets/raquel-projects/gallery/p1.webp',
+      '/assets/raquel-projects/gallery/p2.webp',
+      '/assets/raquel-projects/gallery/p3.webp',
     ],
     layout: 'tall',
   },

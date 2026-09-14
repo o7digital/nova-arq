@@ -1,4 +1,7 @@
 const imageDimensions = {
+  '/assets/raquel-projects/gallery/p1.webp': [960, 1280],
+  '/assets/raquel-projects/gallery/p2.webp': [960, 1280],
+  '/assets/raquel-projects/gallery/p3.webp': [960, 1280],
   '/assets/raquel-projects/gallery/mobiliario1.webp': [1280, 960],
   '/assets/raquel-projects/gallery/mobiliario2.webp': [1059, 870],
   '/assets/portrait/raquel-hedo.webp': [699, 1280],
