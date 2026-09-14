@@ -72,9 +72,7 @@ const projects = [
     type: 'Arquitectura e interiorismo',
     images: [
       '/assets/raquel-projects/gallery/projects-red-corridor.webp',
-      '/assets/raquel-projects/gallery/projects-blue-bathroom.webp',
       '/assets/raquel-projects/gallery/projects-white-staircase.webp',
-      '/assets/raquel-projects/gallery/projects-red-dining.webp',
     ],
     layout: 'tall',
   },
