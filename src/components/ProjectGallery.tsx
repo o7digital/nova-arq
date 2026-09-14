@@ -48,9 +48,7 @@ const projects = [
     title: 'Mobiliario & ritmo',
     type: 'Diseño a medida',
     images: [
-      '/assets/raquel-projects/portfolio-custom-divider.webp',
       '/assets/raquel-projects/gallery/custom-space-dining.webp',
-      '/assets/raquel-projects/gallery/custom-space-sofa-cropped.webp',
     ],
     layout: 'wide',
   },
@@ -280,6 +278,7 @@ type InteriorCopy = (typeof interiorFeatures)[keyof typeof interiorFeatures];
 
 function ProjectCard({ project, index, copy, renovation, interiors }: { project: Project; index: number; copy: Copy; renovation: RenovationCopy; interiors: InteriorCopy }) {
   const [current, setCurrent] = useState(0);
+  const hasMultipleImages = project.images.length > 1;
   const editorial = project.id === '03'
     ? renovation
     : project.id === '04'
@@ -294,17 +293,17 @@ function ProjectCard({ project, index, copy, renovation, interiors }: { project:
   };
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!hasMultipleImages || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const timer = window.setTimeout(() => move(1), 4000);
     return () => window.clearTimeout(timer);
-  }, [current]);
+  }, [current, hasMultipleImages]);
 
   return (
     <article className={`project-card project-card--${project.layout}${editorial ? ' project-card--editorial' : ''}`}>
       <div
         className="project-image-wrap"
         role="group"
-        aria-roledescription="carousel"
+        aria-roledescription={hasMultipleImages ? 'carousel' : undefined}
         aria-label={copy.titles[index]}
       >
         {project.images.map((image, photo) => {
@@ -324,7 +323,7 @@ function ProjectCard({ project, index, copy, renovation, interiors }: { project:
           );
         })}
         <span className="project-number">{project.id}</span>
-        <div className="project-slider-controls">
+        {hasMultipleImages && <div className="project-slider-controls">
           <button type="button" onClick={() => move(-1)} aria-label={copy.previous}>←</button>
           <div className="project-slider-dots" aria-label={`${current + 1} / ${project.images.length}`}>
             {project.images.map((_, photo) => (
@@ -339,7 +338,7 @@ function ProjectCard({ project, index, copy, renovation, interiors }: { project:
             ))}
           </div>
           <button type="button" onClick={() => move(1)} aria-label={copy.next}>→</button>
-        </div>
+        </div>}
       </div>
       <div className="project-meta">
         <div>
