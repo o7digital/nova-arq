@@ -6,7 +6,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import { services } from '../data/services';
 import ContactForm from '../components/ContactForm.astro';
 import FaqSection from '../components/FaqSection.astro';
-import { homeAlternates } from '../data/seo';
+import { homeAlternates, localSeo } from '../data/seo';
 
 const steps = [
   { number: 'I', title: 'Escuchar', text: 'Entender la vida, las necesidades y la ambición detrás de cada espacio.' },
@@ -17,8 +17,8 @@ const steps = [
 ---
 
 <Layout
-  title="Raquel Hedo | Arquitectura & Interiorismo"
-  description="Raquel Hedo crea proyectos de arquitectura residencial, interiorismo, decoración y remodelación integral con una visión personal, técnica y atemporal."
+  title={localSeo.es.home}
+  description={localSeo.es.description}
   alternates={homeAlternates}
 >
   <SiteHeader />

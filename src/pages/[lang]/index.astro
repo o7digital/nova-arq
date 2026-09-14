@@ -6,7 +6,7 @@ import ProjectGallery from '../../components/ProjectGallery';
 import ContactForm from '../../components/ContactForm.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { homeCopy, getLocalizedServices, localeConfig, type Locale } from '../../data/i18n';
-import { homeAlternates } from '../../data/seo';
+import { homeAlternates, localSeo } from '../../data/seo';
 
 export function getStaticPaths() { return Object.keys(localeConfig).map((lang) => ({ params:{ lang }, props:{ locale:lang } })); }
 const locale = Astro.props.locale as Locale;
@@ -14,7 +14,7 @@ const t = homeCopy[locale];
 const services = getLocalizedServices(locale);
 const servicePath = localeConfig[locale].servicesPath;
 ---
-<Layout title={t.title} description={t.description} lang={locale} alternates={homeAlternates}>
+<Layout title={localSeo[locale].home} description={localSeo[locale].description} lang={locale} alternates={homeAlternates}>
   <div id="top"></div><SiteHeader locale={locale} alternatePath="/" />
   <main>
     <section class="hero" id="inicio">

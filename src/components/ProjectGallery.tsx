@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { projectImageDescription } from '../data/projectImageDescriptions';
 import { getImageDimensions } from '../data/imageDimensions';
 
 type Category = 'Todos' | 'Arquitectura' | 'Interiores' | 'Remodelación';
@@ -316,7 +317,8 @@ function ProjectCard({ project, index, copy, renovation, interiors }: { project:
               key={image}
               className={`project-slide ${photo === current ? 'is-active' : ''}`}
               src={image}
-              alt={`${copy.titles[index]}, ${photo + 1} / ${project.images.length}`}
+              alt={projectImageDescription(image) ?? copy.titles[index]}
+              lang="es"
               width={width}
               height={height}
               loading="lazy"
