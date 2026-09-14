@@ -385,6 +385,8 @@ footer { min-height: 280px; padding: 55px clamp(24px, 7vw, 112px) 34px; backgrou
 }
 
 @media (max-width: 620px) {
+  .hero-slider-dots, .project-slider-dots { display: none; }
+  .project-slider-controls > button:last-child { grid-column: 3; }
   .brand-copy small { display: none; }
   .site-header { padding-inline: 20px; }
   .hero-content { padding: 185px 20px 120px; }
@@ -407,7 +409,7 @@ footer { min-height: 280px; padding: 55px clamp(24px, 7vw, 112px) 34px; backgrou
   .project-card--editorial { display: block; }
   .project-image-wrap, .project-card--tall .project-image-wrap, .project-card--square .project-image-wrap { height: 500px; }
   .project-slider-controls { left: 14px; right: 14px; bottom: 14px; grid-template-columns: 46px 1fr 46px; }
-  .project-slider-controls button { width: 46px; height: 46px; }
+  .project-slider-controls > button { width: 46px; height: 46px; }
   .project-meta > span { display: none; }
   .project-editorial { max-width: none; margin-top: 48px; padding: 46px 0; }
   .project-editorial h4 { font-size: 42px; }
