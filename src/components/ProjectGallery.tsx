@@ -48,7 +48,8 @@ const projects = [
     title: 'Mobiliario & ritmo',
     type: 'Diseño a medida',
     images: [
-      '/assets/raquel-projects/gallery/custom-space-dining.webp',
+      '/assets/raquel-projects/gallery/mobiliario1.webp',
+      '/assets/raquel-projects/gallery/mobiliario2.webp',
     ],
     layout: 'wide',
   },
