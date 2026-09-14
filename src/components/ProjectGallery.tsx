@@ -76,6 +76,8 @@ const projects = [
       '/assets/raquel-projects/gallery/p1.webp',
       '/assets/raquel-projects/gallery/p2.webp',
       '/assets/raquel-projects/gallery/p3.webp',
+      '/assets/raquel-projects/gallery/t1.webp',
+      '/assets/raquel-projects/gallery/t2.webp',
     ],
     layout: 'tall',
   },

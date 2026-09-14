@@ -1,4 +1,6 @@
 const imageDimensions = {
+  '/assets/raquel-projects/gallery/t1.webp': [1280, 960],
+  '/assets/raquel-projects/gallery/t2.webp': [1280, 960],
   '/assets/raquel-projects/gallery/p1.webp': [960, 1280],
   '/assets/raquel-projects/gallery/p2.webp': [960, 1280],
   '/assets/raquel-projects/gallery/p3.webp': [960, 1280],
