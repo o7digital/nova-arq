@@ -18,7 +18,7 @@ const servicePath = localeConfig[locale].servicesPath;
   <div id="top"></div><SiteHeader locale={locale} alternatePath="/" />
   <main>
     <section class="hero" id="inicio">
-      <div class="hero-image" data-hero-slider aria-label="Raquel Hedo projects">
+      <div class="hero-image" data-hero-slider aria-label="RHEO projects">
         <img class="hero-slide is-active" src="/assets/raquel-projects/hero-living-room.webp" alt="Double-height living room" width="1095" height="771" fetchpriority="high" decoding="async" />
         <img class="hero-slide" src="/assets/raquel-projects/hero3.webp" alt="Dining room and split-level living area overlooking the garden" width="1280" height="960" loading="lazy" fetchpriority="low" decoding="async" />
         <img class="hero-slide" src="/assets/raquel-projects/hero4.webp" alt="Bright interior with floor-to-ceiling windows facing a planted stone courtyard" width="1280" height="960" loading="lazy" fetchpriority="low" decoding="async" />
@@ -35,6 +35,6 @@ const servicePath = localeConfig[locale].servicesPath;
     <section class="process section-pad"><div class="process-top" data-reveal><p class="eyebrow"><span></span>{t.processEye}</p><h2>{t.processTitle}</h2><p>{t.processText}</p></div><div class="process-grid">{t.steps.map(([number,title,text])=><article data-reveal><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
     <section class="profile section-pad"><div class="profile-visual" data-reveal><div class="portrait-frame"><img src="/assets/portrait/raquel-hedo.webp" alt="Raquel Hedo" width="699" height="1280" loading="lazy" decoding="async"/></div><div class="profile-years"><strong>≈25</strong><span>{t.years}</span></div></div><div class="profile-copy" data-reveal><p class="eyebrow"><span></span>{t.profileEye}</p><h2>{t.profileTitle}</h2><p class="profile-lead">{t.profileLead}</p><p>{t.profileText}</p><div class="credentials"><div><strong>4</strong><span>{t.languages}<br/>ES · EN · FR · IT</span></div><div><strong>360°</strong><span>Design, budget<br/>& execution</span></div><div><strong>2001</strong><span>{t.practice}</span></div></div></div></section>
     <section class="worldline"><p>UNIVERSIDAD ANÁHUAC</p><span>·</span><p>BOSTON</p><span>·</span><p>HARVARD</p><span>·</span><p>PITTSBURGH</p><span>·</span><p>FIRENZE</p><span>·</span><p>SUISSE</p></section><FaqSection locale={locale}/>
-    <section class="contact section-pad" id="contacto"><div class="contact-copy" data-reveal><p class="eyebrow"><span></span>{t.conversation}</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p><ContactForm locale={locale}/></div><div class="contact-monogram">RH</div></section>
+    <section class="contact section-pad" id="contacto"><div class="contact-copy" data-reveal><p class="eyebrow"><span></span>{t.conversation}</p><h2>{t.contactTitle}</h2><p>{t.contactText}</p><ContactForm locale={locale}/></div><div class="contact-monogram">RHEO</div></section>
   </main><SiteFooter locale={locale}/>
 </Layout>

@@ -3,7 +3,7 @@
     <header>
       <div>
         <strong>Olivia <em>AI v2</em></strong>
-        <small data-subtitle>Asistente Raquel Hedo · En línea</small>
+        <small data-subtitle>Asistente RHEO · En línea</small>
       </div>
       <span class="olivia__status"><i></i><b data-status>En línea</b></span>
       <button data-close aria-label="Cerrar">×</button>
@@ -16,7 +16,7 @@
       <button type="button" data-scroll-down aria-label="Mensajes siguientes">↓</button>
     </nav>
     <form data-form>
-      <label><input type="checkbox" data-consent /> <span><span data-consent-label>Acepto compartir mis datos para recibir atención de Raquel Hedo.</span> <button type="button" class="olivia__privacy-link" data-privacy-open>Aviso de Privacidad</button></span></label>
+      <label><input type="checkbox" data-consent /> <span><span data-consent-label>Acepto compartir mis datos para recibir atención de RHEO.</span> <button type="button" class="olivia__privacy-link" data-privacy-open>Aviso de Privacidad</button></span></label>
       <div class="olivia__lead-fields" data-lead-fields hidden>
         <input data-first-name placeholder="Nombre" autocomplete="given-name" />
         <input data-last-name placeholder="Apellido" autocomplete="family-name" />
@@ -102,50 +102,50 @@
   const language = (document.documentElement.lang || "es").toLowerCase().split("-")[0];
   const english = language !== "es";
   const copy = english ? {
-    subtitle: "Raquel Hedo Assistant",
+    subtitle: "RHEO Assistant",
     status: "Online",
-    welcome: "Hello! I’m Olivia, Raquel Hedo’s assistant. How can we help you today?",
-    consent: "I agree to share my data to receive assistance from Raquel Hedo.",
+    welcome: "Hello! I’m Olivia, RHEO’s assistant. How can we help you today?",
+    consent: "I agree to share my data to receive assistance from RHEO.",
     privacy: "Privacy Notice",
     privacyTitle: "Privacy Notice - Olivia AI",
-    privacyBody: "By using this chat, you authorize Raquel Hedo to process the contact details, messages, language and page visited that you share, in order to answer your request and contact you about your project. You may exercise your data-protection rights through the contact details in the Privacy Notice.",
+    privacyBody: "By using this chat, you authorize RHEO to process the contact details, messages, language and page visited that you share, in order to answer your request and contact you about your project. You may exercise your data-protection rights through the contact details in the Privacy Notice.",
     privacyAccept: "I have read and accept",
     privacyUrl: "/en/privacy/",
     firstName: "First name", lastName: "Last name", email: "Email", phone: "Phone", need: "Tell us about your project",
-    privacyFirst: "Before continuing, please read and accept Raquel Hedo’s Privacy Notice.",
-    interestPrompt: "Thank you. Please complete the form and a Raquel Hedo advisor will contact you.",
+    privacyFirst: "Before continuing, please read and accept RHEO’s Privacy Notice.",
+    interestPrompt: "Thank you. Please complete the form and a RHEO advisor will contact you.",
     leadPrompt: "To give you the right answer, Raquel needs to review your project. Please share your details and a brief message, and she will contact you shortly.",
-    leadThanks: "Thank you. Your project request has been sent to Raquel Hedo, who will contact you using the details provided.",
+    leadThanks: "Thank you. Your project request has been sent to RHEO, who will contact you using the details provided.",
     submitLead: "Send request",
     consentRequired: "Please accept the Privacy Notice so an expert can contact you.",
     missingLead: "Please complete first name, last name, email, phone number and your project message.",
     qualificationPrompt: "Before requesting your details, please briefly describe your project, its location and what you would like to achieve.",
     typing: "Olivia is typing",
-    clarification: "What would you like to know?\n\n1. Raquel Hedo services\n2. Contact an advisor\n3. Ask another question",
+    clarification: "What would you like to know?\n\n1. RHEO services\n2. Contact an advisor\n3. Ask another question",
     otherQuestion: "Please write your question. I’ll answer it before asking for contact details.",
     placeholder: "Write your question…", send: "Send", teaser: "Need help?",
     fallback: "I’m unable to answer right now. Please use the site contact form."
   } : {
-    subtitle: "Asistente Raquel Hedo",
+    subtitle: "Asistente RHEO",
     status: "En línea",
-    welcome: "¡Hola! Soy Olivia, asistente de Raquel Hedo. ¿En qué podemos ayudarle hoy?",
-    consent: "Acepto compartir mis datos para recibir atención de Raquel Hedo.",
+    welcome: "¡Hola! Soy Olivia, asistente de RHEO. ¿En qué podemos ayudarle hoy?",
+    consent: "Acepto compartir mis datos para recibir atención de RHEO.",
     privacy: "Aviso de Privacidad",
     privacyTitle: "Aviso de Privacidad - Olivia AI",
-    privacyBody: "Al usar este chat autorizas a Raquel Hedo a tratar los datos de contacto, mensajes, idioma y página visitada que compartas, con la finalidad de atender tu solicitud y contactarte sobre tu proyecto. Puedes ejercer tus derechos de protección de datos mediante los datos de contacto indicados en el Aviso de Privacidad.",
+    privacyBody: "Al usar este chat autorizas a RHEO a tratar los datos de contacto, mensajes, idioma y página visitada que compartas, con la finalidad de atender tu solicitud y contactarte sobre tu proyecto. Puedes ejercer tus derechos de protección de datos mediante los datos de contacto indicados en el Aviso de Privacidad.",
     privacyAccept: "He leído y acepto",
     privacyUrl: "/aviso-de-privacidad/",
     firstName: "Nombre", lastName: "Apellido", email: "Email", phone: "Teléfono", need: "Cuéntanos sobre tu proyecto",
-    privacyFirst: "Antes de continuar, por favor lee y acepta el Aviso de Privacidad de Raquel Hedo.",
-    interestPrompt: "Gracias. Completa el formulario y un asesor de Raquel Hedo se pondrá en contacto contigo.",
+    privacyFirst: "Antes de continuar, por favor lee y acepta el Aviso de Privacidad de RHEO.",
+    interestPrompt: "Gracias. Completa el formulario y un asesor de RHEO se pondrá en contacto contigo.",
     leadPrompt: "Para asegurar una respuesta correcta, Raquel debe revisar tu proyecto. Compártenos tus datos y un breve mensaje, y te contactará a la brevedad.",
-    leadThanks: "Gracias. Tu solicitud fue enviada a Raquel Hedo, quien te contactará con los datos proporcionados.",
+    leadThanks: "Gracias. Tu solicitud fue enviada a RHEO, quien te contactará con los datos proporcionados.",
     submitLead: "Enviar solicitud",
     consentRequired: "Acepta el Aviso de Privacidad para que un experto pueda contactarte.",
     missingLead: "Completa nombre, apellido, email, teléfono y el mensaje sobre tu proyecto.",
     qualificationPrompt: "Antes de pedirte tus datos, cuéntame brevemente qué proyecto tienes, dónde se encuentra y qué te gustaría conseguir.",
     typing: "Olivia está escribiendo",
-    clarification: "¿Qué le gustaría saber?\n\n1. Servicios de Raquel Hedo\n2. Contactar a un asesor\n3. Hacer otra pregunta",
+    clarification: "¿Qué le gustaría saber?\n\n1. Servicios de RHEO\n2. Contactar a un asesor\n3. Hacer otra pregunta",
     otherQuestion: "Escriba su pregunta. La responderé antes de pedirle datos de contacto.",
     placeholder: "Escribe tu pregunta…", send: "Enviar", teaser: "¿Necesitas ayuda?",
     fallback: "No pude responder ahora. Puedes utilizar el formulario de contacto del sitio."
@@ -424,7 +424,7 @@
       const [, response] = await Promise.all([saveVisitorMessage, chatRequest]);
       if (!response.ok) throw new Error("Chat request failed");
       const data = await response.json();
-      const reply = data.reply || "Raquel Hedo continuará contigo.";
+      const reply = data.reply || "RHEO continuará contigo.";
       chatHistory.push({ role: "assistant", content: reply });
       await revealReply(pending, reply);
       if (data.nextAction === "qualify_business_need") handoffQualificationPending = true;
