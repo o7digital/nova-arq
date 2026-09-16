@@ -13,6 +13,9 @@ const projects = [
     images: [
       '/assets/raquel-projects/portfolio-dining-room.webp',
       '/assets/raquel-projects/hero-living-room.webp',
+      '/assets/raquel-projects/gallery/interiores-vestibulo.webp',
+      '/assets/raquel-projects/gallery/interiores-comedor.webp',
+      '/assets/raquel-projects/gallery/interiores-escalera.webp',
     ],
     layout: 'wide',
   },
