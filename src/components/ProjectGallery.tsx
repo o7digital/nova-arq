@@ -77,6 +77,8 @@ const projects = [
       '/assets/raquel-projects/gallery/p1.webp',
       '/assets/raquel-projects/editorial-open-plan.webp',
       '/assets/raquel-projects/gallery/p3.webp',
+      '/assets/raquel-projects/gallery/proyectos-residencial-vista-mar.jpeg',
+      '/assets/raquel-projects/gallery/proyectos-residencial-comedor.jpeg',
       '/assets/raquel-projects/gallery/t1.webp',
       '/assets/raquel-projects/gallery/t2.webp',
     ],

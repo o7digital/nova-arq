@@ -26,6 +26,8 @@ const imageDimensions = {
   '/assets/raquel-projects/gallery/projects-blue-bathroom.webp': [960, 1280],
   '/assets/raquel-projects/gallery/projects-red-corridor.webp': [960, 1280],
   '/assets/raquel-projects/gallery/projects-red-dining.webp': [960, 1280],
+  '/assets/raquel-projects/gallery/proyectos-residencial-vista-mar.jpeg': [1038, 973],
+  '/assets/raquel-projects/gallery/proyectos-residencial-comedor.jpeg': [1014, 699],
   '/assets/raquel-projects/gallery/projects-white-staircase.webp': [960, 1280],
   '/assets/raquel-projects/gallery/red-living-dining.webp': [960, 1280],
   '/assets/raquel-projects/gallery/red-living-fireplace.webp': [960, 1280],
