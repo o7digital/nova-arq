@@ -35,6 +35,7 @@ const imageDimensions = {
   '/assets/raquel-projects/gallery/red-living-dining.webp': [960, 1280],
   '/assets/raquel-projects/gallery/red-living-fireplace.webp': [960, 1280],
   '/assets/raquel-projects/gallery/red-living-overview.webp': [960, 1280],
+  '/assets/raquel-projects/gallery/remodelacion-bano-ducha.webp': [780, 1040],
   '/assets/raquel-projects/gallery/suite-bathroom.webp': [1141, 774],
   '/assets/raquel-projects/hero-bathroom.webp': [1192, 853],
   '/assets/raquel-projects/hero-dining.webp': [1170, 774],

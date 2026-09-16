@@ -6,6 +6,7 @@ const descriptions: Record<string, string> = {
   'suite-bathroom': 'Baño de suite con lavabos y acabados de piedra',
   'portfolio-bathroom': 'Baño residencial con bañera y luz natural',
   'bathroom-detail': 'Detalle de los acabados y mobiliario del baño',
+  'remodelacion-bano-ducha': 'Baño remodelado con ducha de vidrio y acabados de mármol claro',
   'interiores-vestibulo': 'Vestíbulo residencial con escalera, consola de mármol y escultura',
   'interiores-comedor': 'Comedor residencial con mesa redonda frente a grandes ventanales',
   'interiores-escalera': 'Escalera residencial abierta hacia el comedor y la sala',
