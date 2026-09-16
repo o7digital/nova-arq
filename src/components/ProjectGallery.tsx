@@ -47,8 +47,10 @@ const projects = [
     title: 'Mobiliario & ritmo',
     type: 'Diseño a medida',
     images: [
-      '/assets/raquel-projects/gallery/mobiliario1.webp',
-      '/assets/raquel-projects/gallery/mobiliario2.webp',
+      '/assets/raquel-projects/gallery/mobiliario-club-spa.jpeg',
+      '/assets/raquel-projects/gallery/mobiliario-club-tv.jpeg',
+      '/assets/raquel-projects/gallery/mobiliario-club-spa-detail.jpeg',
+      '/assets/raquel-projects/gallery/mobiliario-club-lockers.jpeg',
     ],
     layout: 'wide',
   },
