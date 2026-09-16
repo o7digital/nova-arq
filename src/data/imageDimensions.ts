@@ -8,6 +8,7 @@ const imageDimensions = {
   '/assets/raquel-projects/gallery/mobiliario2.webp': [1059, 870],
   '/assets/portrait/raquel-hedo.webp': [699, 1280],
   '/assets/raquel-projects/editorial-pool.webp': [1280, 960],
+  '/assets/raquel-projects/editorial-open-plan.webp': [1000, 828],
   '/assets/raquel-projects/gallery/bathroom-detail.webp': [910, 815],
   '/assets/raquel-projects/gallery/club-dining.webp': [1028, 1280],
   '/assets/raquel-projects/gallery/club-entrance.webp': [960, 1280],

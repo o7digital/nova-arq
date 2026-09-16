@@ -71,9 +71,9 @@ const projects = [
     title: 'Nuestros Proyectos',
     type: 'Arquitectura e interiorismo',
     images: [
-      '/assets/raquel-projects/gallery/projects-red-corridor.webp',
+      '/assets/raquel-projects/hero-open-plan.webp',
       '/assets/raquel-projects/gallery/p1.webp',
-      '/assets/raquel-projects/gallery/p2.webp',
+      '/assets/raquel-projects/editorial-open-plan.webp',
       '/assets/raquel-projects/gallery/p3.webp',
       '/assets/raquel-projects/gallery/t1.webp',
       '/assets/raquel-projects/gallery/t2.webp',
