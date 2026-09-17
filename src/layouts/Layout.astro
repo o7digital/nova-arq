@@ -6,6 +6,7 @@ import '@fontsource/dm-sans/500.css';
 import '@fontsource/dm-sans/600.css';
 import '@fontsource/italiana/400.css';
 import { getImageDimensions } from '../data/imageDimensions';
+import { seoKeywords } from '../data/seo';
 import OliviaAI from '../components/OliviaAI.astro';
 
 interface Props {
@@ -14,6 +15,7 @@ interface Props {
   lang?: string;
   alternates?: Record<string, string>;
   image?: string;
+  keywords?: readonly string[];
   structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -23,8 +25,10 @@ const {
   lang = 'es',
   alternates,
   image = '/assets/raquel-projects/hero-living-room.webp',
+  keywords,
   structuredData,
 } = Astro.props;
+const pageKeywords = keywords ?? seoKeywords[lang as keyof typeof seoKeywords] ?? [];
 const siteUrl = Astro.site ?? new URL('https://www.rheo.com.mx');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const socialDimensions = getImageDimensions(image);
@@ -83,6 +87,7 @@ const serializedSchemas = JSON.stringify(schemas).replace(/</g, '\\u003c');
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    {pageKeywords.length > 0 && <meta name="keywords" content={pageKeywords.join(', ')} />}
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#171712" />
     <link rel="canonical" href={canonicalUrl} />

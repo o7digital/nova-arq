@@ -1,4 +1,6 @@
 ---
+import { footerSeoKeywords } from '../data/seo';
+
 interface Props { locale?: string }
 const { locale = 'es' } = Astro.props;
 const prefixes: Record<string,string> = { es: '', en: '/en', fr: '/fr', it: '/it', de:'/de', pt:'/pt' };
@@ -6,6 +8,8 @@ const base = prefixes[locale] ?? '';
 const labels: Record<string,string[]> = { es:['Estudio','Proyectos','Servicios','Hablemos','Ubicación','VOLVER ARRIBA'], en:['Studio','Projects','Services','Let’s talk','Location','BACK TO TOP'], fr:['Studio','Projets','Services','Parlons-nous','Localisation','RETOUR EN HAUT'], it:['Studio','Progetti','Servizi','Parliamo','Sede','TORNA SU'], de:['Studio','Projekte','Leistungen','Sprechen wir','Standort','NACH OBEN'], pt:['Estúdio','Projetos','Serviços','Vamos conversar','Localização','VOLTAR AO TOPO'] };
 const l = labels[locale] ?? labels.es;
 const privacy = locale === 'es' ? '/aviso-de-privacidad/' : `/${locale}/privacy/`;
+const keywords = footerSeoKeywords[locale as keyof typeof footerSeoKeywords] ?? footerSeoKeywords.es;
+const keywordLabels: Record<string, string> = { es:'Servicios de arquitectura en Ciudad de México', en:'Architecture services in Mexico City', fr:'Services d’architecture à Mexico', it:'Servizi di architettura a Città del Messico', de:'Architekturleistungen in Mexiko-Stadt', pt:'Serviços de arquitetura na Cidade do México' };
 ---
 <footer>
   <a class="brand brand--footer" href={`${base}/#inicio`}>
@@ -16,5 +20,9 @@ const privacy = locale === 'es' ? '/aviso-de-privacidad/' : `/${locale}/privacy/
     <a href={`${base}/#estudio`}>{l[0]}</a><a href={`${base}/#proyectos`}>{l[1]}</a><a href={`${base}/#servicios`}>{l[2]}</a><a href={`${base}/#contacto`}>{l[3]}</a>
   </nav>
   <div class="footer-location"><span>{l[4]}</span><address>México · CDMX</address><p>Architecture · Interiors · Decoration</p></div>
+  <section class="footer-keywords" aria-label={keywordLabels[locale] ?? keywordLabels.es}>
+    <h2>{keywordLabels[locale] ?? keywordLabels.es}</h2>
+    <p>{keywords.map((keyword, index) => <><span>{keyword}</span>{index < keywords.length - 1 && <i aria-hidden="true"> · </i>}</>)}</p>
+  </section>
   <div class="footer-bottom"><span>© 2026 RHEO</span><a href={privacy}>{locale==='es'?'AVISO DE PRIVACIDAD':locale==='fr'?'CONFIDENTIALITÉ':locale==='it'?'PRIVACY':locale==='de'?'DATENSCHUTZ':locale==='pt'?'PRIVACIDADE':'PRIVACY NOTICE'}</a><a href="#top">{l[5]} ↑</a></div>
 </footer>
