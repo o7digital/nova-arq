@@ -23,6 +23,7 @@ const imageDimensions = {
   '/assets/raquel-projects/gallery/club-staircase.webp': [1021, 1280],
   '/assets/raquel-projects/gallery/custom-space-dining.webp': [1280, 960],
   '/assets/raquel-projects/gallery/custom-space-sofa-cropped.webp': [1360, 736],
+  '/assets/raquel-projects/gallery/espacios-recreativos-bar.webp': [1144, 1280],
   '/assets/raquel-projects/gallery/interiores-vestibulo.webp': [1280, 960],
   '/assets/raquel-projects/gallery/interiores-comedor.webp': [1028, 1280],
   '/assets/raquel-projects/gallery/interiores-escalera.webp': [1021, 1280],

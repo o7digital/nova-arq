@@ -46,6 +46,7 @@ const projects = [
       '/assets/raquel-projects/gallery/mobiliario-club-tv.jpeg',
       '/assets/raquel-projects/gallery/mobiliario-club-spa-detail.jpeg',
       '/assets/raquel-projects/gallery/mobiliario-club-lockers.jpeg',
+      '/assets/raquel-projects/gallery/espacios-recreativos-bar.webp',
     ],
     layout: 'square',
   },
