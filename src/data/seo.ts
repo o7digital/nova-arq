@@ -16,7 +16,7 @@ export const privacyAlternates = {
   pt: '/pt/privacy/',
 };
 
-export const studioId = 'https://raquel-hedo.vercel.app/#studio';
+export const studioId = 'https://www.rheo.com.mx/#studio';
 
 export function serviceStructuredData(name: string, description: string, url: string) {
   return {
@@ -24,7 +24,7 @@ export function serviceStructuredData(name: string, description: string, url: st
     '@type': 'Service',
     name,
     description,
-    url: new URL(url, 'https://raquel-hedo.vercel.app').href,
+    url: new URL(url, 'https://www.rheo.com.mx').href,
     provider: { '@id': studioId },
     areaServed: [{ '@type': 'Country', name: 'México' }, { '@type': 'Place', name: 'International' }],
   };

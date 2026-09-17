@@ -318,6 +318,7 @@ img { display: block; width: 100%; }
 .legal-body p { margin:0; font-size:14px; line-height:1.85; color:#555248; }
 .legal-page aside { margin-top:100px; padding:55px; display:flex; align-items:center; justify-content:space-between; gap:40px; background:var(--sand); }
 .legal-page aside p { margin:0; font:400 clamp(28px,4vw,50px) var(--serif); }
+.legal-email { display:inline-block; margin-top:18px; font-size:14px; letter-spacing:.08em; text-decoration:underline; text-underline-offset:5px; }
 .button--dark { background: var(--ink); color: var(--paper); }
 .button--dark:hover { background: var(--olive); }
 .button--static { cursor: default; }

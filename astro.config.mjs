@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://raquel-hedo.vercel.app',
+  site: 'https://www.rheo.com.mx',
   integrations: [react(), sitemap()],
   output: 'static',
 });

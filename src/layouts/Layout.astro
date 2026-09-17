@@ -25,7 +25,7 @@ const {
   image = '/assets/raquel-projects/hero-living-room.webp',
   structuredData,
 } = Astro.props;
-const siteUrl = Astro.site ?? new URL('https://raquel-hedo.vercel.app');
+const siteUrl = Astro.site ?? new URL('https://www.rheo.com.mx');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const socialDimensions = getImageDimensions(image);
 const socialImageUrl = new URL(image, siteUrl).href;
@@ -49,6 +49,7 @@ const schemas = [
     '@id': new URL('/#studio', siteUrl).href,
     name: 'RHEO Architecture & Interiors',
     url: new URL('/', siteUrl).href,
+    email: 'contacto@rheo.com.mx',
     image: socialImageUrl,
     description: 'Estudio de arquitectura residencial, interiorismo, decoración, remodelación integral y dirección de obra.',
     address: { '@type': 'PostalAddress', addressLocality: 'Ciudad de México', addressCountry: 'MX' },
