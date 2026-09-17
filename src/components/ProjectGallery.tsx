@@ -290,6 +290,7 @@ type InteriorCopy = (typeof interiorFeatures)[keyof typeof interiorFeatures];
 function ProjectCard({ project, index, copy, renovation, interiors }: { project: Project; index: number; copy: Copy; renovation: RenovationCopy; interiors: InteriorCopy }) {
   const [current, setCurrent] = useState(0);
   const hasImages = project.images.length > 0;
+  const showMeta = hasImages && project.id !== '06';
   const hasMultipleImages = project.images.length > 1;
   const editorial = project.id === '03'
     ? renovation
@@ -353,7 +354,7 @@ function ProjectCard({ project, index, copy, renovation, interiors }: { project:
           <button type="button" onClick={() => move(1)} aria-label={copy.next}>→</button>
         </div>}
       </div>}
-      {hasImages && <div className="project-meta">
+      {showMeta && <div className="project-meta">
         <div>
           <p>{copy.types[index]}</p>
           <h3>{copy.titles[index]}</h3>
