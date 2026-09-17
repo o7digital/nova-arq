@@ -84,7 +84,9 @@ const projects = [
     category: 'Arquitectura',
     title: 'Nuestros Proyectos',
     type: 'Arquitectura e interiorismo',
-    images: [],
+    images: [
+      '/assets/raquel-projects/gallery/nuestros-proyectos-exterior.webp',
+    ],
     layout: 'tall',
   },
 ] as const;

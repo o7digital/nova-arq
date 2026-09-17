@@ -18,6 +18,7 @@ const descriptions: Record<string, string> = {
   'club-lockers': 'Vestidores y casilleros del Club de Empresarios',
   'mobiliario1': 'Sala a desnivel con sofá esquinero, mesas de vidrio y vistas al jardín',
   'mobiliario2': 'Mobiliario de madera, barra y mesa redonda en un espacio con muros de piedra',
+  'nuestros-proyectos-exterior': 'Exterior residencial blanco con terraza de madera y jardín arbolado',
   'portfolio-red-living-room': 'Sala residencial con muros rojos y mobiliario de madera',
   'red-living-dining': 'Sala y comedor integrados en un interior de tonos rojos',
   'red-living-fireplace': 'Chimenea y mobiliario en una sala de tonos rojos',
