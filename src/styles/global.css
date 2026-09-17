@@ -388,7 +388,8 @@ footer { min-height: 280px; padding: 55px clamp(24px, 7vw, 112px) 34px; backgrou
 @media (max-width: 620px) {
   .hero-slider-dots, .project-slider-dots { display: none; }
   .project-slider-controls > button:last-child { grid-column: 3; }
-  .brand-copy small { display: none; }
+  .brand { gap: 12px; }
+  .brand-copy small { display: block; white-space: nowrap; font-size: 8px; letter-spacing: .1em; }
   .site-header { padding-inline: 20px; }
   .hero-content { padding: 185px 20px 120px; }
   .hero h1 { font-size: clamp(54px, 18vw, 78px); line-height: .92; }
