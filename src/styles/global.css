@@ -149,6 +149,7 @@ img { display: block; width: 100%; }
 .project-meta p, .project-meta > span { color: #6f6b60; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
 .project-meta h3 { margin-top: 7px; font-family: var(--serif); font-weight: 400; font-size: clamp(27px, 3vw, 42px); }
 .project-editorial { grid-column: 2; grid-row: 1 / span 2; align-self: center; max-width: 560px; padding: clamp(38px, 5vw, 76px) 0; border-block: 1px solid var(--line); }
+.project-card--no-media .project-editorial { grid-column: 2; grid-row: 1; }
 .project-editorial .eyebrow { margin-bottom: 34px; }
 .project-editorial h4 { max-width: 540px; margin: 0 0 34px; font: 400 clamp(39px, 4.2vw, 66px)/1.03 var(--serif); letter-spacing: -.04em; }
 .project-editorial > p:not(.eyebrow) { margin: 0; color: #5f5b52; font-size: 15px; line-height: 1.8; }
@@ -412,6 +413,7 @@ footer { min-height: 280px; padding: 55px clamp(24px, 7vw, 112px) 34px; backgrou
   .project-slider-controls > button { width: 46px; height: 46px; }
   .project-meta > span { display: none; }
   .project-editorial { max-width: none; margin-top: 48px; padding: 46px 0; }
+  .project-card--no-media .project-editorial { margin-top: 0; }
   .project-editorial h4 { font-size: 42px; }
   .quote-section { min-height: 650px; }
   .quote-content p { font-size: 40px; }

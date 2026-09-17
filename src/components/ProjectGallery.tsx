@@ -46,6 +46,9 @@ const projects = [
       '/assets/raquel-projects/gallery/mobiliario-club-tv.jpeg',
       '/assets/raquel-projects/gallery/mobiliario-club-spa-detail.jpeg',
       '/assets/raquel-projects/gallery/mobiliario-club-lockers.jpeg',
+      '/assets/raquel-projects/hero-open-plan.webp',
+      '/assets/raquel-projects/gallery/p1.webp',
+      '/assets/raquel-projects/gallery/p3.webp',
       '/assets/raquel-projects/gallery/espacios-recreativos-bar.webp',
     ],
     layout: 'square',
@@ -81,12 +84,7 @@ const projects = [
     category: 'Arquitectura',
     title: 'Nuestros Proyectos',
     type: 'Arquitectura e interiorismo',
-    images: [
-      '/assets/raquel-projects/hero-open-plan.webp',
-      '/assets/raquel-projects/gallery/p1.webp',
-      '/assets/raquel-projects/gallery/p3.webp',
-      '/assets/raquel-projects/gallery/proyectos-residencial-vista-mar.jpeg',
-    ],
+    images: [],
     layout: 'tall',
   },
 ] as const;
@@ -289,6 +287,7 @@ type InteriorCopy = (typeof interiorFeatures)[keyof typeof interiorFeatures];
 
 function ProjectCard({ project, index, copy, renovation, interiors }: { project: Project; index: number; copy: Copy; renovation: RenovationCopy; interiors: InteriorCopy }) {
   const [current, setCurrent] = useState(0);
+  const hasImages = project.images.length > 0;
   const hasMultipleImages = project.images.length > 1;
   const editorial = project.id === '03'
     ? renovation
@@ -310,8 +309,8 @@ function ProjectCard({ project, index, copy, renovation, interiors }: { project:
   }, [current, hasMultipleImages]);
 
   return (
-    <article className={`project-card project-card--${project.layout}${editorial ? ' project-card--editorial' : ''}`}>
-      <div
+    <article className={`project-card project-card--${project.layout}${editorial ? ' project-card--editorial' : ''}${hasImages ? '' : ' project-card--no-media'}`}>
+      {hasImages && <div
         className="project-image-wrap"
         role="group"
         aria-roledescription={hasMultipleImages ? 'carousel' : undefined}
@@ -351,14 +350,14 @@ function ProjectCard({ project, index, copy, renovation, interiors }: { project:
           </div>
           <button type="button" onClick={() => move(1)} aria-label={copy.next}>→</button>
         </div>}
-      </div>
-      <div className="project-meta">
+      </div>}
+      {hasImages && <div className="project-meta">
         <div>
           <p>{copy.types[index]}</p>
           <h3>{copy.titles[index]}</h3>
         </div>
         <span>{copy.categories[categories.indexOf(project.category)]}</span>
-      </div>
+      </div>}
       {editorial && (
         <div className="project-editorial">
           <p className="eyebrow"><span></span>{editorial.eyebrow}</p>
