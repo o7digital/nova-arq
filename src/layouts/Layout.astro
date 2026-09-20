@@ -6,7 +6,7 @@ import '@fontsource/dm-sans/500.css';
 import '@fontsource/dm-sans/600.css';
 import '@fontsource/italiana/400.css';
 import { getImageDimensions } from '../data/imageDimensions';
-import { seoKeywords } from '../data/seo';
+import { mexicoCityNeighborhoods, seoKeywords } from '../data/seo';
 import OliviaAI from '../components/OliviaAI.astro';
 
 interface Props {
@@ -44,7 +44,7 @@ const schemas = [
     '@id': new URL('/#website', siteUrl).href,
     url: new URL('/', siteUrl).href,
     name: 'RHEO',
-    description: 'Estudio de arquitectura, interiorismo, decoración y remodelación integral en Ciudad de México.',
+    description: 'Estudio de arquitectura, interiorismo, decoración y remodelación integral en Polanco, Bosques de las Lomas, Santa Fe y otras zonas de Ciudad de México.',
     inLanguage: ['es', 'en', 'fr', 'it', 'de', 'pt'],
   },
   {
@@ -55,9 +55,12 @@ const schemas = [
     url: new URL('/', siteUrl).href,
     email: 'contacto@rheo.com.mx',
     image: socialImageUrl,
-    description: 'Estudio de arquitectura residencial, interiorismo, decoración, remodelación integral y dirección de obra.',
+    description: 'Estudio de arquitectura residencial, interiorismo, decoración, remodelación integral y dirección de obra en zonas residenciales de Ciudad de México.',
     address: { '@type': 'PostalAddress', addressLocality: 'Ciudad de México', addressCountry: 'MX' },
-    areaServed: [{ '@type': 'Country', name: 'México' }, { '@type': 'Place', name: 'International' }],
+    areaServed: [
+      ...mexicoCityNeighborhoods.map((neighborhood) => ({ '@type': 'Place', name: neighborhood })),
+      { '@type': 'Country', name: 'México' },
+    ],
     founder: { '@id': new URL('/#raquel-hedo', siteUrl).href },
   },
   {

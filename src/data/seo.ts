@@ -18,7 +18,37 @@ export const privacyAlternates = {
 
 export const studioId = 'https://www.rheo.com.mx/#studio';
 
+/** Priority residential areas served by the studio in Mexico City. */
+export const mexicoCityNeighborhoods = [
+  'Polanco',
+  'Bosques de las Lomas',
+  'Santa Fe',
+  'Lomas de Chapultepec',
+  'Jardines del Pedregal',
+  'Condesa',
+  'Roma Norte',
+] as const;
+
+const spanishNeighborhoodKeywords = [
+  'arquitectura residencial en Polanco',
+  'interiorismo en Polanco',
+  'remodelación de casas en Polanco',
+  'arquitectura residencial en Bosques de las Lomas',
+  'interiorismo en Bosques de las Lomas',
+  'remodelación de casas en Bosques de las Lomas',
+  'arquitectura residencial en Santa Fe',
+  'interiorismo en Santa Fe',
+  'remodelación de casas en Santa Fe',
+  'arquitectura residencial en Lomas de Chapultepec',
+  'interiorismo en Lomas de Chapultepec',
+  'arquitectura residencial en Jardines del Pedregal',
+  'interiorismo en Jardines del Pedregal',
+  'arquitectura residencial en Condesa',
+  'interiorismo en Roma Norte',
+] as const;
+
 export const spanishKeywords = [
+  ...spanishNeighborhoodKeywords,
   'arquitectura residencial',
   'interiorismo',
   'diseño de interiores',
@@ -102,6 +132,11 @@ const localizedKeywords = (keywords: readonly string[], location: string) =>
 export const seoKeywords = {
   es: spanishKeywords,
   en: [
+    ...mexicoCityNeighborhoods.flatMap((neighborhood) => [
+      `residential architecture in ${neighborhood}`,
+      `interior design in ${neighborhood}`,
+      `home renovation in ${neighborhood}`,
+    ]),
     'residential architecture', 'interior design', 'interior decoration', 'complete renovation',
     'home renovation', 'site supervision', 'construction management', 'architectural design',
     'construction documents', 'residential construction', 'home extensions', 'space planning',
@@ -120,6 +155,11 @@ export const seoKeywords = {
     'contemporary architecture', 'luxury home design', 'exclusive residential projects',
   ],
   fr: [
+    ...mexicoCityNeighborhoods.flatMap((neighborhood) => [
+      `architecture résidentielle à ${neighborhood}`,
+      `architecture intérieure à ${neighborhood}`,
+      `rénovation de maison à ${neighborhood}`,
+    ]),
     'architecture résidentielle', 'architecture intérieure', 'décoration intérieure',
     'rénovation intégrale', 'rénovation de maison', 'suivi de chantier', 'direction de chantier',
     'conception architecturale', 'projet d’exécution', 'construction résidentielle',
@@ -140,6 +180,11 @@ export const seoKeywords = {
     'architecture contemporaine', 'maisons de luxe', 'projets résidentiels exclusifs',
   ],
   it: [
+    ...mexicoCityNeighborhoods.flatMap((neighborhood) => [
+      `architettura residenziale a ${neighborhood}`,
+      `interior design a ${neighborhood}`,
+      `ristrutturazione casa a ${neighborhood}`,
+    ]),
     'architettura residenziale', 'interior design', 'decorazione d’interni',
     'ristrutturazione integrale', 'ristrutturazione casa', 'direzione lavori',
     'supervisione cantiere', 'progettazione architettonica', 'progetto esecutivo',
@@ -161,6 +206,11 @@ export const seoKeywords = {
     'architettura contemporanea', 'ville di lusso', 'progetti residenziali esclusivi',
   ],
   de: [
+    ...mexicoCityNeighborhoods.flatMap((neighborhood) => [
+      `Wohnarchitektur in ${neighborhood}`,
+      `Innenarchitektur in ${neighborhood}`,
+      `Haussanierung in ${neighborhood}`,
+    ]),
     'Wohnarchitektur', 'Innenarchitektur', 'Inneneinrichtung', 'Komplettsanierung',
     'Haussanierung', 'Bauleitung', 'Bauaufsicht', 'Architekturplanung', 'Ausführungsplanung',
     'Wohnungsbau', 'Hauserweiterung', 'Raumplanung', 'Materialauswahl', 'Lichtplanung',
@@ -178,6 +228,11 @@ export const seoKeywords = {
     'exklusive Wohnprojekte',
   ],
   pt: [
+    ...mexicoCityNeighborhoods.flatMap((neighborhood) => [
+      `arquitetura residencial em ${neighborhood}`,
+      `design de interiores em ${neighborhood}`,
+      `remodelação de casas em ${neighborhood}`,
+    ]),
     'arquitetura residencial', 'design de interiores', 'decoração de interiores',
     'remodelação integral', 'renovação de casas', 'direção de obra', 'supervisão de obra',
     'projeto arquitetónico', 'projeto executivo', 'construção residencial',
@@ -232,17 +287,20 @@ export function serviceStructuredData(name: string, description: string, url: st
     description,
     url: new URL(url, 'https://www.rheo.com.mx').href,
     provider: { '@id': studioId },
-    areaServed: [{ '@type': 'Country', name: 'México' }, { '@type': 'Place', name: 'International' }],
+    areaServed: [
+      ...mexicoCityNeighborhoods.map((neighborhood) => ({ '@type': 'Place', name: neighborhood })),
+      { '@type': 'Country', name: 'México' },
+    ],
   };
 }
 
 export const localSeo = {
-  es: { location: 'en Ciudad de México', home: 'Arquitectura e interiorismo en CDMX | RHEO', description: 'Estudio de arquitectura residencial, interiorismo y remodelación integral en Ciudad de México. Diseño, mobiliario a medida y supervisión de obra con RHEO.' },
-  en: { location: 'in Mexico City', home: 'Architecture & Interior Design in Mexico City | RHEO', description: 'Residential architecture, interior design and complete renovations in Mexico City. RHEO coordinates design, bespoke furniture and site supervision.' },
-  fr: { location: 'à Mexico', home: 'Architecture et décoration à Mexico | RHEO', description: 'Architecture résidentielle, décoration et rénovation intégrale à Mexico. RHEO accompagne votre projet, du design au mobilier sur mesure et au suivi de chantier.' },
-  it: { location: 'a Città del Messico', home: 'Architettura e interni a Città del Messico | RHEO', description: 'Architettura residenziale, interni e ristrutturazioni a Città del Messico. RHEO segue design, arredi su misura e supervisione dei lavori.' },
-  de: { location: 'in Mexiko-Stadt', home: 'Architektur und Interieur in Mexiko-Stadt | RHEO', description: 'Wohnarchitektur, Innenarchitektur und Komplettsanierung in Mexiko-Stadt. RHEO begleitet Planung, Maßmöbel und Bauaufsicht.' },
-  pt: { location: 'na Cidade do México', home: 'Arquitetura e interiores na Cidade do México | RHEO', description: 'Arquitetura residencial, interiores e remodelação integral na Cidade do México. RHEO coordena projeto, mobiliário sob medida e supervisão de obra.' },
+  es: { location: 'en Polanco, Bosques de las Lomas y Santa Fe', home: 'Arquitectura e interiorismo en Polanco, Santa Fe y CDMX | RHEO', description: 'Estudio de arquitectura residencial, interiorismo y remodelación integral en Polanco, Bosques de las Lomas, Santa Fe, Lomas de Chapultepec y Jardines del Pedregal.' },
+  en: { location: 'in Polanco, Bosques de las Lomas and Santa Fe', home: 'Architecture & Interior Design in Polanco, Santa Fe & Mexico City | RHEO', description: 'Residential architecture, interior design and complete renovations in Polanco, Bosques de las Lomas, Santa Fe, Lomas de Chapultepec and Jardines del Pedregal.' },
+  fr: { location: 'à Polanco, Bosques de las Lomas et Santa Fe', home: 'Architecture et décoration à Polanco, Santa Fe et Mexico | RHEO', description: 'Architecture résidentielle, décoration et rénovation à Polanco, Bosques de las Lomas, Santa Fe, Lomas de Chapultepec et Jardines del Pedregal.' },
+  it: { location: 'a Polanco, Bosques de las Lomas e Santa Fe', home: 'Architettura e interni a Polanco, Santa Fe e Città del Messico | RHEO', description: 'Architettura residenziale, interni e ristrutturazioni a Polanco, Bosques de las Lomas, Santa Fe, Lomas de Chapultepec e Jardines del Pedregal.' },
+  de: { location: 'in Polanco, Bosques de las Lomas und Santa Fe', home: 'Architektur und Interieur in Polanco, Santa Fe und Mexiko-Stadt | RHEO', description: 'Wohnarchitektur, Innenarchitektur und Komplettsanierung in Polanco, Bosques de las Lomas, Santa Fe, Lomas de Chapultepec und Jardines del Pedregal.' },
+  pt: { location: 'em Polanco, Bosques de las Lomas e Santa Fe', home: 'Arquitetura e interiores em Polanco, Santa Fe e Cidade do México | RHEO', description: 'Arquitetura residencial, interiores e remodelação em Polanco, Bosques de las Lomas, Santa Fe, Lomas de Chapultepec e Jardines del Pedregal.' },
 } as const;
 
 export function serviceSeo(title: string, summary: string, locale: keyof typeof localSeo) {
