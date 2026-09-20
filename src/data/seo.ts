@@ -266,7 +266,8 @@ const locationMarkers = {
 
 function getFooterSeoKeywords(locale: keyof typeof seoKeywords) {
   return seoKeywords[locale].filter((keyword) =>
-    locationMarkers[locale].some((marker) => keyword.includes(marker)),
+    locationMarkers[locale].some((marker) => keyword.includes(marker)) ||
+    mexicoCityNeighborhoods.some((neighborhood) => keyword.includes(neighborhood)),
   ).slice(0, 20);
 }
 

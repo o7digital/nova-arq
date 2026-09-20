@@ -9,7 +9,7 @@ const labels: Record<string,string[]> = { es:['Estudio','Proyectos','Servicios',
 const l = labels[locale] ?? labels.es;
 const privacy = locale === 'es' ? '/aviso-de-privacidad/' : `/${locale}/privacy/`;
 const keywords = footerSeoKeywords[locale as keyof typeof footerSeoKeywords] ?? footerSeoKeywords.es;
-const keywordLabels: Record<string, string> = { es:'Servicios de arquitectura en Ciudad de México', en:'Architecture services in Mexico City', fr:'Services d’architecture à Mexico', it:'Servizi di architettura a Città del Messico', de:'Architekturleistungen in Mexiko-Stadt', pt:'Serviços de arquitetura na Cidade do México' };
+const keywordLabels: Record<string, string> = { es:'Arquitectura e interiorismo en Polanco, Bosques de las Lomas y Santa Fe', en:'Architecture and interiors in Polanco, Bosques de las Lomas and Santa Fe', fr:'Architecture et intérieurs à Polanco, Bosques de las Lomas et Santa Fe', it:'Architettura e interni a Polanco, Bosques de las Lomas e Santa Fe', de:'Architektur und Interieur in Polanco, Bosques de las Lomas und Santa Fe', pt:'Arquitetura e interiores em Polanco, Bosques de las Lomas e Santa Fe' };
 ---
 <footer>
   <a class="brand brand--footer" href={`${base}/#inicio`}>
