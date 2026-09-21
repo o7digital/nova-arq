@@ -43,7 +43,7 @@ const projects = [
       '/assets/raquel-projects/gallery/club-restaurant.webp',
       '/assets/raquel-projects/gallery/club-lockers.webp',
       '/assets/raquel-projects/gallery/mobiliario-club-spa.webp',
-      '/assets/raquel-projects/gallery/mobiliario-club-tv.webp',
+      '/assets/raquel-projects/gallery/mobiliario-club-tv-off.webp',
       '/assets/raquel-projects/gallery/mobiliario-club-spa-detail.webp',
       '/assets/raquel-projects/gallery/mobiliario-club-lockers.webp',
       '/assets/raquel-projects/gallery/espacios-recreativos-bar.webp',
