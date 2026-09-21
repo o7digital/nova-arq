@@ -8,7 +8,7 @@ const imageDimensions = {
   '/assets/raquel-projects/gallery/mobiliario2.webp': [1059, 870],
   '/assets/raquel-projects/gallery/nuestros-proyectos-exterior.webp': [960, 1280],
   '/assets/raquel-projects/gallery/mobiliario-club-spa.webp': [1132, 1280],
-  '/assets/raquel-projects/gallery/mobiliario-club-tv.webp': [1095, 883],
+  '/assets/raquel-projects/gallery/mobiliario-club-tv.webp': [1024, 826],
   '/assets/raquel-projects/gallery/mobiliario-club-spa-detail.webp': [987, 1280],
   '/assets/raquel-projects/gallery/mobiliario-club-lockers.webp': [991, 1280],
   '/assets/portrait/raquel-hedo.webp': [699, 1280],
